@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace OOAD_HR_System
 {
-    public partial class MainFunction : Form
+    public partial class _mainFunction : Form
     {
-        public MainFunction()
+        public _mainFunction()
         {
             InitializeComponent();
         }

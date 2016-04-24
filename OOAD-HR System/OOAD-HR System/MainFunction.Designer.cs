@@ -1,6 +1,6 @@
 ﻿namespace OOAD_HR_System
 {
-    partial class MainFunction
+    partial class _mainFunction
     {
         /// <summary>
         /// Required designer variable.
@@ -28,152 +28,163 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.mainFunctionPage = new System.Windows.Forms.TabControl();
-            this.employee = new System.Windows.Forms.TabPage();
-            this.workAttendance = new System.Windows.Forms.TabPage();
-            this.reimburse = new System.Windows.Forms.TabPage();
-            this.bonus = new System.Windows.Forms.TabPage();
-            this.salary = new System.Windows.Forms.TabPage();
-            this.traning = new System.Windows.Forms.TabPage();
-            this.careerPlanning = new System.Windows.Forms.TabPage();
-            this.report = new System.Windows.Forms.TabPage();
-            this.authorization = new System.Windows.Forms.TabPage();
-            this.mainFunctionPage.SuspendLayout();
+            this._mainFunctionPage = new System.Windows.Forms.TabControl();
+            this._employee = new System.Windows.Forms.TabPage();
+            this._workAttendance = new System.Windows.Forms.TabPage();
+            this._reimburse = new System.Windows.Forms.TabPage();
+            this._bonus = new System.Windows.Forms.TabPage();
+            this._salary = new System.Windows.Forms.TabPage();
+            this._traning = new System.Windows.Forms.TabPage();
+            this._careerPlanning = new System.Windows.Forms.TabPage();
+            this._report = new System.Windows.Forms.TabPage();
+            this._authorization = new System.Windows.Forms.TabPage();
+            this._mainFunctionPage.SuspendLayout();
             this.SuspendLayout();
             // 
-            // mainFunctionPage
+            // _mainFunctionPage
             // 
-            this.mainFunctionPage.Controls.Add(this.employee);
-            this.mainFunctionPage.Controls.Add(this.workAttendance);
-            this.mainFunctionPage.Controls.Add(this.reimburse);
-            this.mainFunctionPage.Controls.Add(this.bonus);
-            this.mainFunctionPage.Controls.Add(this.salary);
-            this.mainFunctionPage.Controls.Add(this.traning);
-            this.mainFunctionPage.Controls.Add(this.careerPlanning);
-            this.mainFunctionPage.Controls.Add(this.report);
-            this.mainFunctionPage.Controls.Add(this.authorization);
-            this.mainFunctionPage.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.mainFunctionPage.Location = new System.Drawing.Point(12, 12);
-            this.mainFunctionPage.Name = "mainFunctionPage";
-            this.mainFunctionPage.SelectedIndex = 0;
-            this.mainFunctionPage.Size = new System.Drawing.Size(1566, 911);
-            this.mainFunctionPage.TabIndex = 0;
+            this._mainFunctionPage.Controls.Add(this._employee);
+            this._mainFunctionPage.Controls.Add(this._workAttendance);
+            this._mainFunctionPage.Controls.Add(this._reimburse);
+            this._mainFunctionPage.Controls.Add(this._bonus);
+            this._mainFunctionPage.Controls.Add(this._salary);
+            this._mainFunctionPage.Controls.Add(this._traning);
+            this._mainFunctionPage.Controls.Add(this._careerPlanning);
+            this._mainFunctionPage.Controls.Add(this._report);
+            this._mainFunctionPage.Controls.Add(this._authorization);
+            this._mainFunctionPage.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this._mainFunctionPage.Location = new System.Drawing.Point(8, 8);
+            this._mainFunctionPage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this._mainFunctionPage.Name = "_mainFunctionPage";
+            this._mainFunctionPage.SelectedIndex = 0;
+            this._mainFunctionPage.Size = new System.Drawing.Size(1044, 607);
+            this._mainFunctionPage.TabIndex = 0;
             // 
-            // employee
+            // _employee
             // 
-            this.employee.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.employee.Location = new System.Drawing.Point(4, 34);
-            this.employee.Name = "employee";
-            this.employee.Padding = new System.Windows.Forms.Padding(3);
-            this.employee.Size = new System.Drawing.Size(1558, 873);
-            this.employee.TabIndex = 0;
-            this.employee.Text = "Employee";
-            this.employee.UseVisualStyleBackColor = true;
+            this._employee.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this._employee.Location = new System.Drawing.Point(4, 26);
+            this._employee.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this._employee.Name = "_employee";
+            this._employee.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this._employee.Size = new System.Drawing.Size(1036, 577);
+            this._employee.TabIndex = 0;
+            this._employee.Text = "Employee";
+            this._employee.UseVisualStyleBackColor = true;
             // 
-            // workAttendance
+            // _workAttendance
             // 
-            this.workAttendance.Location = new System.Drawing.Point(4, 28);
-            this.workAttendance.Name = "workAttendance";
-            this.workAttendance.Padding = new System.Windows.Forms.Padding(3);
-            this.workAttendance.Size = new System.Drawing.Size(1558, 879);
-            this.workAttendance.TabIndex = 1;
-            this.workAttendance.Text = "Work Attendance";
-            this.workAttendance.UseVisualStyleBackColor = true;
+            this._workAttendance.Location = new System.Drawing.Point(4, 26);
+            this._workAttendance.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this._workAttendance.Name = "_workAttendance";
+            this._workAttendance.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this._workAttendance.Size = new System.Drawing.Size(1036, 577);
+            this._workAttendance.TabIndex = 1;
+            this._workAttendance.Text = "Work Attendance";
+            this._workAttendance.UseVisualStyleBackColor = true;
             // 
-            // reimburse
+            // _reimburse
             // 
-            this.reimburse.Location = new System.Drawing.Point(4, 28);
-            this.reimburse.Name = "reimburse";
-            this.reimburse.Padding = new System.Windows.Forms.Padding(3);
-            this.reimburse.Size = new System.Drawing.Size(1558, 879);
-            this.reimburse.TabIndex = 2;
-            this.reimburse.Text = "Reimburse";
-            this.reimburse.UseVisualStyleBackColor = true;
+            this._reimburse.Location = new System.Drawing.Point(4, 26);
+            this._reimburse.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this._reimburse.Name = "_reimburse";
+            this._reimburse.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this._reimburse.Size = new System.Drawing.Size(1036, 577);
+            this._reimburse.TabIndex = 2;
+            this._reimburse.Text = "Reimburse";
+            this._reimburse.UseVisualStyleBackColor = true;
             // 
-            // bonus
+            // _bonus
             // 
-            this.bonus.Location = new System.Drawing.Point(4, 28);
-            this.bonus.Name = "bonus";
-            this.bonus.Padding = new System.Windows.Forms.Padding(3);
-            this.bonus.Size = new System.Drawing.Size(1558, 879);
-            this.bonus.TabIndex = 3;
-            this.bonus.Text = "Bonus";
-            this.bonus.UseVisualStyleBackColor = true;
+            this._bonus.Location = new System.Drawing.Point(4, 26);
+            this._bonus.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this._bonus.Name = "_bonus";
+            this._bonus.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this._bonus.Size = new System.Drawing.Size(1036, 577);
+            this._bonus.TabIndex = 3;
+            this._bonus.Text = "Bonus";
+            this._bonus.UseVisualStyleBackColor = true;
             // 
-            // salary
+            // _salary
             // 
-            this.salary.Location = new System.Drawing.Point(4, 28);
-            this.salary.Name = "salary";
-            this.salary.Padding = new System.Windows.Forms.Padding(3);
-            this.salary.Size = new System.Drawing.Size(1558, 879);
-            this.salary.TabIndex = 4;
-            this.salary.Text = "Salary";
-            this.salary.UseVisualStyleBackColor = true;
+            this._salary.Location = new System.Drawing.Point(4, 26);
+            this._salary.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this._salary.Name = "_salary";
+            this._salary.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this._salary.Size = new System.Drawing.Size(1036, 577);
+            this._salary.TabIndex = 4;
+            this._salary.Text = "Salary";
+            this._salary.UseVisualStyleBackColor = true;
             // 
-            // traning
+            // _traning
             // 
-            this.traning.Location = new System.Drawing.Point(4, 28);
-            this.traning.Name = "traning";
-            this.traning.Padding = new System.Windows.Forms.Padding(3);
-            this.traning.Size = new System.Drawing.Size(1558, 879);
-            this.traning.TabIndex = 5;
-            this.traning.Text = "Traning";
-            this.traning.UseVisualStyleBackColor = true;
+            this._traning.Location = new System.Drawing.Point(4, 26);
+            this._traning.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this._traning.Name = "_traning";
+            this._traning.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this._traning.Size = new System.Drawing.Size(1036, 577);
+            this._traning.TabIndex = 5;
+            this._traning.Text = "Traning";
+            this._traning.UseVisualStyleBackColor = true;
             // 
-            // careerPlanning
+            // _careerPlanning
             // 
-            this.careerPlanning.Location = new System.Drawing.Point(4, 28);
-            this.careerPlanning.Name = "careerPlanning";
-            this.careerPlanning.Padding = new System.Windows.Forms.Padding(3);
-            this.careerPlanning.Size = new System.Drawing.Size(1558, 879);
-            this.careerPlanning.TabIndex = 6;
-            this.careerPlanning.Text = "Career Plainning";
-            this.careerPlanning.UseVisualStyleBackColor = true;
+            this._careerPlanning.Location = new System.Drawing.Point(4, 26);
+            this._careerPlanning.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this._careerPlanning.Name = "_careerPlanning";
+            this._careerPlanning.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this._careerPlanning.Size = new System.Drawing.Size(1036, 577);
+            this._careerPlanning.TabIndex = 6;
+            this._careerPlanning.Text = "Career Plainning";
+            this._careerPlanning.UseVisualStyleBackColor = true;
             // 
-            // report
+            // _report
             // 
-            this.report.Location = new System.Drawing.Point(4, 28);
-            this.report.Name = "report";
-            this.report.Padding = new System.Windows.Forms.Padding(3);
-            this.report.Size = new System.Drawing.Size(1558, 879);
-            this.report.TabIndex = 7;
-            this.report.Text = "Report";
-            this.report.UseVisualStyleBackColor = true;
+            this._report.Location = new System.Drawing.Point(4, 26);
+            this._report.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this._report.Name = "_report";
+            this._report.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this._report.Size = new System.Drawing.Size(1036, 577);
+            this._report.TabIndex = 7;
+            this._report.Text = "Report";
+            this._report.UseVisualStyleBackColor = true;
             // 
-            // authorization
+            // _authorization
             // 
-            this.authorization.Location = new System.Drawing.Point(4, 28);
-            this.authorization.Name = "authorization";
-            this.authorization.Padding = new System.Windows.Forms.Padding(3);
-            this.authorization.Size = new System.Drawing.Size(1558, 879);
-            this.authorization.TabIndex = 8;
-            this.authorization.Text = "Authorization";
-            this.authorization.UseVisualStyleBackColor = true;
+            this._authorization.Location = new System.Drawing.Point(4, 26);
+            this._authorization.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this._authorization.Name = "_authorization";
+            this._authorization.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this._authorization.Size = new System.Drawing.Size(1036, 577);
+            this._authorization.TabIndex = 8;
+            this._authorization.Text = "Authorization";
+            this._authorization.UseVisualStyleBackColor = true;
             // 
-            // MainFunction
+            // _mainFunction
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1590, 935);
-            this.Controls.Add(this.mainFunctionPage);
-            this.Name = "MainFunction";
+            this.ClientSize = new System.Drawing.Size(1060, 623);
+            this.Controls.Add(this._mainFunctionPage);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Name = "_mainFunction";
             this.Text = "MainFunction";
-            this.mainFunctionPage.ResumeLayout(false);
+            this._mainFunctionPage.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TabControl mainFunctionPage;
-        private System.Windows.Forms.TabPage employee;
-        private System.Windows.Forms.TabPage workAttendance;
-        private System.Windows.Forms.TabPage reimburse;
-        private System.Windows.Forms.TabPage bonus;
-        private System.Windows.Forms.TabPage salary;
-        private System.Windows.Forms.TabPage traning;
-        private System.Windows.Forms.TabPage careerPlanning;
-        private System.Windows.Forms.TabPage report;
-        private System.Windows.Forms.TabPage authorization;
+        private System.Windows.Forms.TabControl _mainFunctionPage;
+        private System.Windows.Forms.TabPage _employee;
+        private System.Windows.Forms.TabPage _workAttendance;
+        private System.Windows.Forms.TabPage _reimburse;
+        private System.Windows.Forms.TabPage _bonus;
+        private System.Windows.Forms.TabPage _salary;
+        private System.Windows.Forms.TabPage _traning;
+        private System.Windows.Forms.TabPage _careerPlanning;
+        private System.Windows.Forms.TabPage _report;
+        private System.Windows.Forms.TabPage _authorization;
     }
 }

@@ -10,16 +10,16 @@ using System.Windows.Forms;
 
 namespace OOAD_HR_System
 {
-    public partial class Login : Form
+    public partial class _login : Form
     {
-        public Login()
+        public _login()
         {
             InitializeComponent();
         }
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-            Form mainFunction = new MainFunction();
+            Form mainFunction = new _mainFunction();
             mainFunction.Show();
             this.Visible = false;
         }

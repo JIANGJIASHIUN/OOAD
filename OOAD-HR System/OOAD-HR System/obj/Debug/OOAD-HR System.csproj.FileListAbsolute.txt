@@ -17,3 +17,4 @@ C:\Users\meteor\Documents\OOAD\OOAD-HR System\OOAD-HR System\obj\Debug\OOAD_HR_S
 C:\Users\meteor\Documents\OOAD\OOAD-HR System\OOAD-HR System\obj\Debug\OOAD_HR_System.Properties.Resources.resources
 C:\Users\meteor\Documents\OOAD\OOAD-HR System\OOAD-HR System\obj\Debug\OOAD-HR System.csproj.GenerateResource.Cache
 C:\Users\meteor\Documents\OOAD\OOAD-HR System\OOAD-HR System\obj\Debug\OOAD_HR_System.MainFunction.resources
+C:\Users\Genius\Documents\OOAD\OOAD-HR System\OOAD-HR System\bin\Debug\OOAD-HR System.exe.config
