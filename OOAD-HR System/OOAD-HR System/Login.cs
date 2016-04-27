@@ -12,15 +12,18 @@ namespace OOAD_HR_System
 {
     public partial class _login : Form
     {
+
+        private Form _mainFunction;
+
         public _login()
         {
             InitializeComponent();
         }
 
-        private void loginButton_Click(object sender, EventArgs e)
+        private void ClickLoginButton(object sender, EventArgs e)
         {
-            Form mainFunction = new _mainFunction();
-            mainFunction.Show();
+            _mainFunction = new _mainFunction(this);
+            _mainFunction.Show();
             this.Visible = false;
         }
     }
