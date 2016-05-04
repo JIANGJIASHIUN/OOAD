@@ -9,23 +9,23 @@ namespace OOAD_HR_System.Class
     class EmployeeClass
     {
 
-        String _id;                 // 編號
-        String _name;               // 姓名
-        String _ssn;                // 身分證字號
-        String _sex;                // 性別
-        String _blood;              // 血型
-        String _phone;              // 連絡電話
-        String _addr;               // 住址
-        String _emerPerson;         // 緊急聯絡人
-        String _emerPhone;          // 緊急聯絡人電話
-        String _military;           // 兵役狀態
-        String _jobState;           // 工作狀態(在職, 離職... etc)
-        String _marriedState;       // 婚姻狀態
-        String _spouse;             // 配偶
-        DateTime _birth;            // 出生日期
-        float _basicSalary;         // 底薪
-        String _deptId;             // 所屬部門編號
-        String _positionId;         // 職位編號
+        String _id = null;                 // 編號
+        String _name = null;               // 姓名
+        String _ssn = null;                // 身分證字號
+        String _sex = null;                // 性別
+        String _blood = null;              // 血型
+        String _phone = null;              // 連絡電話
+        String _addr = null;               // 住址
+        String _emerPerson = null;         // 緊急聯絡人
+        String _emerPhone = null;          // 緊急聯絡人電話
+        String _military = null;           // 兵役狀態
+        String _jobState = null;           // 工作狀態(在職, 離職... etc)
+        String _marriedState = null;       // 婚姻狀態
+        String _spouse = null;             // 配偶
+        DateTime _birth;                   // 出生日期
+        float _basicSalary;                // 底薪
+        String _deptId = null;             // 所屬部門編號
+        String _positionId = null;         // 職位編號
 
         // ---------------------------------------------建構子---------------------------------------------
         EmployeeClass () {

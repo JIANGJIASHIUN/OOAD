@@ -9,11 +9,11 @@ namespace OOAD_HR_System.Class
     class DepartmentClass
     {
 
-        String _id;
-        String _name;
+        String _id = null;
+        String _name = null;
         DateTime _startTime;
         DateTime _endTime;
-        String _manager;
+        String _manager = null;
 
         // ---------------------------------------------建構子---------------------------------------------
         DepartmentClass()
@@ -36,49 +36,49 @@ namespace OOAD_HR_System.Class
         }
 
         // ---------------------------------------------設置名稱---------------------------------------------
-        void setName(String name)
+        void setName(String deptId, String name)
         {
             this._name = name;
         }
 
         // ---------------------------------------------取得名稱---------------------------------------------
-        String getName()
+        String getName(String deptId)
         {
             return this._name;
         }
 
         // ---------------------------------------------設置創立時間---------------------------------------------
-        void setStartTime(DateTime startTime)
+        void setStartTime(String deptId, DateTime startTime)
         {
             this._startTime = startTime;
         }
 
         // ---------------------------------------------取得創立時間---------------------------------------------
-        DateTime getStartTime()
+        DateTime getStartTime(String deptId)
         {
             return this._startTime;
         }
 
         // ---------------------------------------------設置關閉時間---------------------------------------------
-        void setEndTime(DateTime endTime)
+        void setEndTime(String deptId, DateTime endTime)
         {
             this._endTime = endTime;
         }
 
         // ---------------------------------------------取得關閉時間---------------------------------------------
-        DateTime getEndTime()
+        DateTime getEndTime(String deptId)
         {
             return this._endTime;
         }
 
         // ---------------------------------------------設置管理人---------------------------------------------
-        void setManager(String manager)
+        void setManager(String deptId, String manager)
         {
             this._manager = manager;
         }
 
         // ---------------------------------------------取得管理人---------------------------------------------
-        String getManager()
+        String getManager(String deptId)
         {
             return this._manager; 
         }
