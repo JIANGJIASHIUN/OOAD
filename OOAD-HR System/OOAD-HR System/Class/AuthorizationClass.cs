@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OOAD_HR_System.Class
 {
-    class AuthorizationClass
+    public class AuthorizationClass
     {
 
         String _id = null;
@@ -14,7 +14,7 @@ namespace OOAD_HR_System.Class
         String _value = null;
 
         // ---------------------------------------------建構子---------------------------------------------
-        AuthorizationClass()
+        public AuthorizationClass()
         {
 
         }

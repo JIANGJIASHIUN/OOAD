@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace OOAD_HR_System.Class
 {
-    class EmployeeClass
+    public class EmployeeClass
     {
-
+        //這兩個public要加
         String _id = null;                 // 編號
         String _name = null;               // 姓名
         String _ssn = null;                // 身分證字號
@@ -28,7 +28,7 @@ namespace OOAD_HR_System.Class
         String _positionId = null;         // 職位編號
 
         // ---------------------------------------------建構子---------------------------------------------
-        EmployeeClass () {
+        public EmployeeClass () {
 
         }
 
