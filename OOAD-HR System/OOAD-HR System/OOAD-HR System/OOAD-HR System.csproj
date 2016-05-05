@@ -45,8 +45,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class\AuthorizationClass.cs" />
-    <Compile Include="Class\BonusClass.cs" />
-    <Compile Include="Class\BonusDefClass.cs" />
     <Compile Include="Class\BusinessMissionClass.cs" />
     <Compile Include="Class\CareerPlanningClass.cs" />
     <Compile Include="Class\DepartmentClass.cs" />
@@ -56,10 +54,8 @@
     <Compile Include="Class\PositionClass.cs" />
     <Compile Include="Class\ReimburseClass.cs" />
     <Compile Include="Class\ReimburseDefClass.cs" />
-    <Compile Include="Class\SalaryClass.cs" />
     <Compile Include="Class\TraningClass.cs" />
     <Compile Include="Class\TraningCourseClass.cs" />
-    <Compile Include="Class\WorkAttendanceClass.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
