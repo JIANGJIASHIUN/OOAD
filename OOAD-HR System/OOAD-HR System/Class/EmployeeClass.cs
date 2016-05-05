@@ -8,30 +8,6 @@ namespace OOAD_HR_System.Class
 {
     public class EmployeeClass
     {
-<<<<<<< HEAD
-        //這兩個public要加
-        String _id = null;                 // 編號
-        String _name = null;               // 姓名
-        String _ssn = null;                // 身分證字號
-        String _sex = null;                // 性別
-        String _blood = null;              // 血型
-        String _phone = null;              // 連絡電話
-        String _addr = null;               // 住址
-        String _emerPerson = null;         // 緊急聯絡人
-        String _emerPhone = null;          // 緊急聯絡人電話
-        String _military = null;           // 兵役狀態
-        String _jobState = null;           // 工作狀態(在職, 離職... etc)
-        String _marriedState = null;       // 婚姻狀態
-        String _spouse = null;             // 配偶
-        DateTime _birth;                   // 出生日期
-        float _basicSalary;                // 底薪
-        String _deptId = null;             // 所屬部門編號
-        String _positionId = null;         // 職位編號
-
-        // ---------------------------------------------建構子---------------------------------------------
-        public EmployeeClass () {
-=======
-
         private String _id = null;                 // 編號
         private String _name = null;               // 姓名
         private String _ssn = null;                // 身分證字號
@@ -53,8 +29,6 @@ namespace OOAD_HR_System.Class
         // ---------------------------------------------建構子---------------------------------------------
         public EmployeeClass()
         {
->>>>>>> ab222d0e25951d5cafd7da09949480d33f39ac4a
-
         }
 
         // 以下class的get set皆會與資料庫連接此部分先寫上基本的部份
