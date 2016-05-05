@@ -9,11 +9,11 @@ namespace OOAD_HR_System.Class
     public class DepartmentClass
     {
 
-        private String _id = null;
-        private String _name = null;
-        private DateTime _startTime;
-        private DateTime _endTime;
-        private String _manager = null;
+        private String _depertmentID = null;
+        private String _departmentName = null;
+        private DateTime _departmentStartTime;
+        private DateTime _departmentEndTime;
+        private String _departmentManager = null;
 
         // ---------------------------------------------建構子---------------------------------------------
         public DepartmentClass()
@@ -24,63 +24,63 @@ namespace OOAD_HR_System.Class
         // 以下class的get set皆會與資料庫連接此部分先寫上基本的部份
 
         // ---------------------------------------------設置id---------------------------------------------
-        public void setId(String id)
+        public void setId(String departmentID, String newDepartmentID)
         {
-            this._id = id;
+            this._depertmentID = newDepartmentID;
         }
 
         // ---------------------------------------------取得id---------------------------------------------
         public String getId()
         {
-            return this._id;
+            return this._depertmentID;
         }
 
         // ---------------------------------------------設置名稱---------------------------------------------
-        public void setName(String deptId, String name)
+        public void setName(String departmentID, String departmentName)
         {
-            this._name = name;
+            this._departmentName = departmentName;
         }
 
         // ---------------------------------------------取得名稱---------------------------------------------
-        public String getName(String deptId)
+        public String getName(String departmentID)
         {
-            return this._name;
+            return this._departmentName;
         }
 
         // ---------------------------------------------設置創立時間---------------------------------------------
-        public void setStartTime(String deptId, DateTime startTime)
+        public void setStartTime(String departmentID, DateTime departmentStartTime)
         {
-            this._startTime = startTime;
+            this._departmentStartTime = departmentStartTime;
         }
 
         // ---------------------------------------------取得創立時間---------------------------------------------
-        public DateTime getStartTime(String deptId)
+        public DateTime getStartTime(String departmentID)
         {
-            return this._startTime;
+            return this._departmentStartTime;
         }
 
         // ---------------------------------------------設置關閉時間---------------------------------------------
-        public void setEndTime(String deptId, DateTime endTime)
+        public void setEndTime(String departmentID, DateTime departmentEndTime)
         {
-            this._endTime = endTime;
+            this._departmentEndTime = departmentEndTime;
         }
 
         // ---------------------------------------------取得關閉時間---------------------------------------------
-        public DateTime getEndTime(String deptId)
+        public DateTime getEndTime(String departmentID)
         {
-            return this._endTime;
+            return this._departmentEndTime;
         }
 
         // ---------------------------------------------設置管理人---------------------------------------------
-        public void setManager(String deptId, String manager)
+        public void setManager(String departmentID, String departmentManager)
         {
-            this._manager = manager;
+            this._departmentManager = departmentManager;
         }
 
         // ---------------------------------------------取得管理人---------------------------------------------
-        public String getManager(String deptId)
+        public String getManager(String departmentID)
         {
-            return this._manager; 
+            return this._departmentManager; 
         }
 
     }

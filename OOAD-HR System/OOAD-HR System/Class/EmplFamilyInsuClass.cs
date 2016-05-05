@@ -9,7 +9,7 @@ namespace OOAD_HR_System.Class
     public class EmplFamilyInsuClass
     {
 
-        private String _emplId;                 // 員工編號(用於確認該家屬為哪個員工之家屬)
+        private String _emplID;                 // 員工編號(用於確認該家屬為哪個員工之家屬)
         private String _eFName;
         private String _eFInsuranceId;
         private DateTime _eFInsuranceBegin;
@@ -24,15 +24,15 @@ namespace OOAD_HR_System.Class
         // 以下class的get set皆會與資料庫連接此部分先寫上基本的部份
 
         // ---------------------------------------------設置員工編號---------------------------------------------
-        public void setEmplId(String emplId)
+        public void setEmplId(String emplID)
         {
-            this._emplId = emplId;
+            this._emplID = emplID;
         }
 
         // ---------------------------------------------取得員工編號---------------------------------------------
         public String getEmplId()
         {
-            return this._emplId;
+            return this._emplID;
         }
 
         // ---------------------------------------------設置家屬性名---------------------------------------------
