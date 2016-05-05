@@ -9,8 +9,8 @@ namespace OOAD_HR_System.Class
     public class InsuranceClass
     {
 
-        private String _id = null;
-        private String _category = null;
+        private String _insuranceID = null;
+        private String _insuranceCategory = null;
 
         // ---------------------------------------------建構子---------------------------------------------
         public InsuranceClass()
@@ -21,27 +21,27 @@ namespace OOAD_HR_System.Class
         // 以下class的get set皆會與資料庫連接此部分先寫上基本的部份
 
         // ---------------------------------------------設置保險id---------------------------------------------
-        public void setId(String insuranceId, String id)
+        public void setId(String insuranceID, String newInsuranceID)
         {
-            this._id = id;
+            this._insuranceID = newInsuranceID;
         }
 
         // ---------------------------------------------取得保險id---------------------------------------------
         public String getId()
         {
-            return this._id;
+            return this._insuranceID;
         }
 
         // ---------------------------------------------設置保險種類---------------------------------------------
-        public void setCategory(String insusranceId, String category)
+        public void setCategory(String insusranceID, String insuranceCategory)
         {
-            this._category = category;
+            this._insuranceCategory = insuranceCategory;
         }
 
         // ---------------------------------------------取得保險種類---------------------------------------------
-        public String getCategory(String insuranceId)
+        public String getCategory(String insuranceID)
         {
-            return this._category;
+            return this._insuranceCategory;
         }
 
     }

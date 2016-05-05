@@ -9,9 +9,9 @@ namespace OOAD_HR_System.Class
     public class WorkAttendanceClass
     {
 
-        private DateTime _date;
-        private DateTime _time;
-        private String _state;
+        private DateTime _waDate;
+        private DateTime _waTime;
+        private String _waState;
 
         // ---------------------------------------------建構子---------------------------------------------
         public WorkAttendanceClass()
@@ -22,17 +22,17 @@ namespace OOAD_HR_System.Class
         // 以下class的get set皆會與資料庫連接此部分先寫上基本的部份
 
         // ---------------------------------------------設置考勤狀態---------------------------------------------
-        public void setWorkState(String emplId, DateTime date, DateTime time, String state)
+        public void setWorkState(String emplID, DateTime waDate, DateTime waTime, String waState)
         {
-            this._date = date;
-            this._time = time;
-            this._state = state;
+            this._waDate = waDate;
+            this._waTime = waTime;
+            this._waState = waState;
         }
 
         // ---------------------------------------------檢查考勤日期---------------------------------------------
-        public String checkWorkState(String emplId, DateTime date, DateTime time)
+        public String checkWorkState(String emplID, DateTime waDate, DateTime waTime)
         {
-            return this._state;
+            return this._waState;
         } 
 
 
