@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace OOAD_HR_System.Class
 {
-    class InsuranceClass
+    public class InsuranceClass
     {
 
-        String _id = null;
-        String _category = null;
+        private String _id = null;
+        private String _category = null;
 
         // ---------------------------------------------建構子---------------------------------------------
-        InsuranceClass()
+        public InsuranceClass()
         {
 
         }
@@ -21,25 +21,25 @@ namespace OOAD_HR_System.Class
         // 以下class的get set皆會與資料庫連接此部分先寫上基本的部份
 
         // ---------------------------------------------設置保險id---------------------------------------------
-        void setId(String insuranceId, String id)
+        public void setId(String insuranceId, String id)
         {
             this._id = id;
         }
 
         // ---------------------------------------------取得保險id---------------------------------------------
-        String getId()
+        public String getId()
         {
             return this._id;
         }
 
         // ---------------------------------------------設置保險種類---------------------------------------------
-        void setCategory(String insusranceId, String category)
+        public void setCategory(String insusranceId, String category)
         {
             this._category = category;
         }
 
         // ---------------------------------------------取得保險種類---------------------------------------------
-        String getCategory(String insuranceId)
+        public String getCategory(String insuranceId)
         {
             return this._category;
         }
