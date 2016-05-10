@@ -27,11 +27,27 @@ namespace OOAD_HR_System
             String emplID = _employeeID.Text;
             String password = _password.Text;
 
-            if (_loginController.judgeAccountAndPassword(emplID, password))
+            if (emplID == "" && password == "")
+            {
+                MessageBox.Show("請輸入員工ID與密碼!");
+            }
+            else if (emplID == "")
+            {
+                MessageBox.Show("請輸入員工ID!");
+            }
+            else if (password == "")
+            {
+                MessageBox.Show("請輸入密碼!");
+            }
+            else if (_loginController.judgeAccountAndPassword(emplID, password))
             {
                 _mainFunction = new _mainFunction(this);
                 _mainFunction.Show();
                 this.Visible = false;
+            }
+            else
+            {
+                MessageBox.Show("員工ID或密碼錯誤, 請重新輸入!");
             }
         }
     }

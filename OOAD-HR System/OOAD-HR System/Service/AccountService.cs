@@ -47,7 +47,7 @@ namespace OOAD_HR_System.Service
                 try {
                     DataTable dataSet = new DataTable();
 
-                    MySqlCommand search = new MySqlCommand("SELECT * FROM account WHERE account =" + account, myConnection);
+                    MySqlCommand search = new MySqlCommand("SELECT * FROM `account` WHERE `account` = '" + account + "'", myConnection);
                     search.ExecuteNonQuery();
 
                     MySqlDataAdapter adapter = new MySqlDataAdapter(search);
