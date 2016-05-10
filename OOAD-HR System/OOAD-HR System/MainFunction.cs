@@ -22,15 +22,17 @@ namespace OOAD_HR_System
             InitializeComponent();
         }
 
-        private void ClickLogoutButton(object sender, EventArgs e)
-        {
-            _login.Visible = true;
-            this.Close();
-        }
+       
 
         private void CloseMainFunvrion(object sender, FormClosedEventArgs e)
         {
             _login.Visible = true;
+        }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            _login.Visible = true;
+            this.Close();
         }
     }
 }
