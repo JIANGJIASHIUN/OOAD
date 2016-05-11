@@ -20,7 +20,6 @@ namespace OOAD_HR_System
         public _mainFunction(Form login)
         {
             _login = login;
-
             InitializeComponent();
         }
 
@@ -37,24 +36,24 @@ namespace OOAD_HR_System
 
         private void ClickAddEmplDataButtonbutton(object sender, EventArgs e)
         {
-            /*EmployeeClass ec = new EmployeeClass();
-            ec.setId(string.Empty, _emplIdTextBox.Text);
-            ec.setName(_emplNameTextBox.Text);
-            ec.setSsn(_emplIdTextBox.Text, _ssnTextBox.Text);
-            ec.setSex(_emplIdTextBox.Text, _sexTextBox.Text);
-            ec.setBlood(_emplIdTextBox.Text, _bloodTextBox.Text);
-            ec.setPhone(_emplIdTextBox.Text,_phoneTextBox.Text);
-            ec.setAddress(_emplIdTextBox.Text,_addrTextBox.Text);
-            ec.setEmerPerson(_emplIdTextBox.Text,_emerPersonTextBox.Text);
-            ec.setEmerPhone(_emplIdTextBox.Text,_emerPhoneTextBox.Text);
-            ec.setMilitary(_emplIdTextBox.Text,_militaryTextBox.Text);
-            ec.setJobState(_emplIdTextBox.Text,_jobStateTextBox.Text);
-            ec.setMarriedState(_emplIdTextBox.Text,_marriedStateTextBox.Text);
-            ec.setSpouse(_emplIdTextBox.Text,_spouseTextBox.Text);
-            ec.setBirth(_emplIdTextBox.Text,_birthDateTimePicker.Value);
-            ec.setBasicSalary(_emplIdTextBox.Text,Convert.ToInt32(_basicSalaryTextBox.Text));
-            ec.setDeptId(_emplIdTextBox.Text,_deptIdTextBox.Text);
-            ec.setPositionId(_emplIdTextBox.Text,_positionIdTextBox.Text);*/
+            employeeController.SetId(string.Empty, _emplIdTextBox.Text);
+            employeeController.SetName(_emplNameTextBox.Text);
+            employeeController.SetSsn(_emplIdTextBox.Text, _ssnTextBox.Text);
+            employeeController.SetSex(_emplIdTextBox.Text, _sexTextBox.Text);
+            employeeController.SetBlood(_emplIdTextBox.Text, _bloodTextBox.Text);
+            employeeController.SetPhone(_emplIdTextBox.Text,_phoneTextBox.Text);
+            employeeController.SetAddress(_emplIdTextBox.Text,_addrTextBox.Text);
+            employeeController.SetEmerPerson(_emplIdTextBox.Text,_emerPersonTextBox.Text);
+            employeeController.SetEmerPhone(_emplIdTextBox.Text,_emerPhoneTextBox.Text);
+            employeeController.SetMilitary(_emplIdTextBox.Text,_militaryTextBox.Text);
+            employeeController.SetJobState(_emplIdTextBox.Text,_jobStateTextBox.Text);
+            employeeController.SetMarriedState(_emplIdTextBox.Text,_marriedStateTextBox.Text);
+            employeeController.SetSpouse(_emplIdTextBox.Text,_spouseTextBox.Text);
+            employeeController.SetBirth(_emplIdTextBox.Text,_birthDateTimePicker.Value);
+            employeeController.SetBasicSalary(_emplIdTextBox.Text,Convert.ToInt32(_basicSalaryTextBox.Text));
+            employeeController.SetDeptId(_emplIdTextBox.Text,_deptIdTextBox.Text);
+            employeeController.SetPositionId(_emplIdTextBox.Text,_positionIdTextBox.Text);
+            MessageBox.Show("新增完成");
         }
     }
 }

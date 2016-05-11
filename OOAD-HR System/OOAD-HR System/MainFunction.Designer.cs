@@ -30,6 +30,7 @@
         {
             this._mainFunctionPage = new System.Windows.Forms.TabControl();
             this._employee = new System.Windows.Forms.TabPage();
+            this._birthDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this._addEmplDataButton = new System.Windows.Forms.Button();
             this._positionIdTextBox = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
@@ -75,7 +76,6 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.flieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this._birthDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this._mainFunctionPage.SuspendLayout();
             this._employee.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -148,12 +148,20 @@
             this._employee.Text = "Employee";
             this._employee.UseVisualStyleBackColor = true;
             // 
+            // _birthDateTimePicker
+            // 
+            this._birthDateTimePicker.Location = new System.Drawing.Point(228, 291);
+            this._birthDateTimePicker.Name = "_birthDateTimePicker";
+            this._birthDateTimePicker.Size = new System.Drawing.Size(115, 22);
+            this._birthDateTimePicker.TabIndex = 35;
+            this._birthDateTimePicker.Value = new System.DateTime(1993, 1, 1, 0, 0, 0, 0);
+            // 
             // _addEmplDataButton
             // 
             this._addEmplDataButton.Location = new System.Drawing.Point(549, 496);
             this._addEmplDataButton.Name = "_addEmplDataButton";
             this._addEmplDataButton.Size = new System.Drawing.Size(75, 23);
-            this._addEmplDataButton.TabIndex = 34;
+            this._addEmplDataButton.TabIndex = 17;
             this._addEmplDataButton.Text = "新增資料";
             this._addEmplDataButton.UseVisualStyleBackColor = true;
             this._addEmplDataButton.Click += new System.EventHandler(this.ClickAddEmplDataButtonbutton);
@@ -163,7 +171,7 @@
             this._positionIdTextBox.Location = new System.Drawing.Point(525, 419);
             this._positionIdTextBox.Name = "_positionIdTextBox";
             this._positionIdTextBox.Size = new System.Drawing.Size(100, 22);
-            this._positionIdTextBox.TabIndex = 33;
+            this._positionIdTextBox.TabIndex = 16;
             // 
             // label17
             // 
@@ -180,7 +188,7 @@
             this._deptIdTextBox.Location = new System.Drawing.Point(525, 374);
             this._deptIdTextBox.Name = "_deptIdTextBox";
             this._deptIdTextBox.Size = new System.Drawing.Size(100, 22);
-            this._deptIdTextBox.TabIndex = 31;
+            this._deptIdTextBox.TabIndex = 15;
             // 
             // label16
             // 
@@ -197,7 +205,7 @@
             this._basicSalaryTextBox.Location = new System.Drawing.Point(525, 329);
             this._basicSalaryTextBox.Name = "_basicSalaryTextBox";
             this._basicSalaryTextBox.Size = new System.Drawing.Size(100, 22);
-            this._basicSalaryTextBox.TabIndex = 29;
+            this._basicSalaryTextBox.TabIndex = 14;
             // 
             // label13
             // 
@@ -224,7 +232,7 @@
             this._spouseTextBox.Location = new System.Drawing.Point(525, 284);
             this._spouseTextBox.Name = "_spouseTextBox";
             this._spouseTextBox.Size = new System.Drawing.Size(100, 22);
-            this._spouseTextBox.TabIndex = 25;
+            this._spouseTextBox.TabIndex = 13;
             // 
             // label15
             // 
@@ -241,7 +249,7 @@
             this._marriedStateTextBox.Location = new System.Drawing.Point(525, 239);
             this._marriedStateTextBox.Name = "_marriedStateTextBox";
             this._marriedStateTextBox.Size = new System.Drawing.Size(100, 22);
-            this._marriedStateTextBox.TabIndex = 23;
+            this._marriedStateTextBox.TabIndex = 12;
             // 
             // label12
             // 
@@ -258,7 +266,7 @@
             this._jobStateTextBox.Location = new System.Drawing.Point(525, 194);
             this._jobStateTextBox.Name = "_jobStateTextBox";
             this._jobStateTextBox.Size = new System.Drawing.Size(100, 22);
-            this._jobStateTextBox.TabIndex = 21;
+            this._jobStateTextBox.TabIndex = 11;
             // 
             // label11
             // 
@@ -275,7 +283,7 @@
             this._phoneTextBox.Location = new System.Drawing.Point(228, 334);
             this._phoneTextBox.Name = "_phoneTextBox";
             this._phoneTextBox.Size = new System.Drawing.Size(100, 22);
-            this._phoneTextBox.TabIndex = 19;
+            this._phoneTextBox.TabIndex = 6;
             // 
             // label10
             // 
@@ -292,7 +300,7 @@
             this._bloodTextBox.Location = new System.Drawing.Point(228, 244);
             this._bloodTextBox.Name = "_bloodTextBox";
             this._bloodTextBox.Size = new System.Drawing.Size(100, 22);
-            this._bloodTextBox.TabIndex = 17;
+            this._bloodTextBox.TabIndex = 5;
             // 
             // label9
             // 
@@ -309,7 +317,7 @@
             this._militaryTextBox.Location = new System.Drawing.Point(525, 149);
             this._militaryTextBox.Name = "_militaryTextBox";
             this._militaryTextBox.Size = new System.Drawing.Size(100, 22);
-            this._militaryTextBox.TabIndex = 15;
+            this._militaryTextBox.TabIndex = 10;
             // 
             // label8
             // 
@@ -326,7 +334,7 @@
             this._emerPhoneTextBox.Location = new System.Drawing.Point(525, 104);
             this._emerPhoneTextBox.Name = "_emerPhoneTextBox";
             this._emerPhoneTextBox.Size = new System.Drawing.Size(100, 22);
-            this._emerPhoneTextBox.TabIndex = 13;
+            this._emerPhoneTextBox.TabIndex = 9;
             // 
             // label7
             // 
@@ -343,7 +351,7 @@
             this._emerPersonTextBox.Location = new System.Drawing.Point(525, 59);
             this._emerPersonTextBox.Name = "_emerPersonTextBox";
             this._emerPersonTextBox.Size = new System.Drawing.Size(100, 22);
-            this._emerPersonTextBox.TabIndex = 11;
+            this._emerPersonTextBox.TabIndex = 8;
             // 
             // label6
             // 
@@ -360,7 +368,7 @@
             this._addrTextBox.Location = new System.Drawing.Point(228, 379);
             this._addrTextBox.Name = "_addrTextBox";
             this._addrTextBox.Size = new System.Drawing.Size(100, 22);
-            this._addrTextBox.TabIndex = 9;
+            this._addrTextBox.TabIndex = 7;
             // 
             // label5
             // 
@@ -377,7 +385,7 @@
             this._sexTextBox.Location = new System.Drawing.Point(228, 199);
             this._sexTextBox.Name = "_sexTextBox";
             this._sexTextBox.Size = new System.Drawing.Size(100, 22);
-            this._sexTextBox.TabIndex = 7;
+            this._sexTextBox.TabIndex = 4;
             // 
             // label4
             // 
@@ -395,7 +403,7 @@
             this._ssnTextBox.Location = new System.Drawing.Point(228, 154);
             this._ssnTextBox.Name = "_ssnTextBox";
             this._ssnTextBox.Size = new System.Drawing.Size(100, 22);
-            this._ssnTextBox.TabIndex = 5;
+            this._ssnTextBox.TabIndex = 3;
             // 
             // label3
             // 
@@ -412,7 +420,7 @@
             this._emplNameTextBox.Location = new System.Drawing.Point(228, 109);
             this._emplNameTextBox.Name = "_emplNameTextBox";
             this._emplNameTextBox.Size = new System.Drawing.Size(100, 22);
-            this._emplNameTextBox.TabIndex = 3;
+            this._emplNameTextBox.TabIndex = 2;
             // 
             // label2
             // 
@@ -553,14 +561,6 @@
             this.logoutToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.logoutToolStripMenuItem.Text = "Logout";
             this.logoutToolStripMenuItem.Click += new System.EventHandler(this.ClickLogoutToolStripMenuItem);
-            // 
-            // _birthDateTimePicker
-            // 
-            this._birthDateTimePicker.Location = new System.Drawing.Point(228, 291);
-            this._birthDateTimePicker.Name = "_birthDateTimePicker";
-            this._birthDateTimePicker.Size = new System.Drawing.Size(115, 22);
-            this._birthDateTimePicker.TabIndex = 35;
-            this._birthDateTimePicker.Value = new System.DateTime(1993, 1, 1, 0, 0, 0, 0);
             // 
             // _mainFunction
             // 
