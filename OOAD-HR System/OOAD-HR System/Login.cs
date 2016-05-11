@@ -44,6 +44,8 @@ namespace OOAD_HR_System
                 _mainFunction = new _mainFunction(this);
                 _mainFunction.Show();
                 this.Visible = false;
+                //_password.Text = "";
+                //password = string.Empty;
             }
             else
             {

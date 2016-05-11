@@ -73,7 +73,7 @@
             // 
             this._employeeID.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this._employeeID.Location = new System.Drawing.Point(184, 98);
-            this._employeeID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this._employeeID.Margin = new System.Windows.Forms.Padding(2);
             this._employeeID.Name = "_employeeID";
             this._employeeID.Size = new System.Drawing.Size(189, 27);
             this._employeeID.TabIndex = 3;
@@ -82,7 +82,7 @@
             // 
             this._password.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this._password.Location = new System.Drawing.Point(157, 146);
-            this._password.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this._password.Margin = new System.Windows.Forms.Padding(2);
             this._password.Name = "_password";
             this._password.Size = new System.Drawing.Size(216, 27);
             this._password.TabIndex = 4;
@@ -92,7 +92,7 @@
             // 
             this._loginButton.Font = new System.Drawing.Font("新細明體", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this._loginButton.Location = new System.Drawing.Point(297, 201);
-            this._loginButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this._loginButton.Margin = new System.Windows.Forms.Padding(2);
             this._loginButton.Name = "_loginButton";
             this._loginButton.Size = new System.Drawing.Size(75, 31);
             this._loginButton.TabIndex = 5;
@@ -102,6 +102,7 @@
             // 
             // _login
             // 
+            this.AcceptButton = this._loginButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(449, 254);
@@ -111,7 +112,7 @@
             this.Controls.Add(this._passwdTitle);
             this.Controls.Add(this._emplIdTitle);
             this.Controls.Add(this._welcomeText);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "_login";
             this.Text = "Human Resource System Login";
             this.ResumeLayout(false);
