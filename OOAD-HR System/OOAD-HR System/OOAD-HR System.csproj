@@ -64,6 +64,7 @@
     <Compile Include="Class\TraningClass.cs" />
     <Compile Include="Class\TraningCourseClass.cs" />
     <Compile Include="Class\WorkAttendanceClass.cs" />
+    <Compile Include="Controller\EmployeeController.cs" />
     <Compile Include="Controller\LoginController.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
