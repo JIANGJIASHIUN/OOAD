@@ -30,6 +30,10 @@
         {
             this._mainFunctionPage = new System.Windows.Forms.TabControl();
             this._employee = new System.Windows.Forms.TabPage();
+            this._militaryComboBox = new System.Windows.Forms.ComboBox();
+            this._marriedStateComboBox = new System.Windows.Forms.ComboBox();
+            this._bloodComboBox = new System.Windows.Forms.ComboBox();
+            this._sexComboBox = new System.Windows.Forms.ComboBox();
             this._birthDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this._addEmplDataButton = new System.Windows.Forms.Button();
             this._positionIdTextBox = new System.Windows.Forms.TextBox();
@@ -41,15 +45,12 @@
             this.label14 = new System.Windows.Forms.Label();
             this._spouseTextBox = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this._marriedStateTextBox = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this._jobStateTextBox = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this._phoneTextBox = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this._bloodTextBox = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this._militaryTextBox = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this._emerPhoneTextBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -57,7 +58,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this._addrTextBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this._sexTextBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this._ssnTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -103,6 +103,10 @@
             // 
             // _employee
             // 
+            this._employee.Controls.Add(this._militaryComboBox);
+            this._employee.Controls.Add(this._marriedStateComboBox);
+            this._employee.Controls.Add(this._bloodComboBox);
+            this._employee.Controls.Add(this._sexComboBox);
             this._employee.Controls.Add(this._birthDateTimePicker);
             this._employee.Controls.Add(this._addEmplDataButton);
             this._employee.Controls.Add(this._positionIdTextBox);
@@ -114,15 +118,12 @@
             this._employee.Controls.Add(this.label14);
             this._employee.Controls.Add(this._spouseTextBox);
             this._employee.Controls.Add(this.label15);
-            this._employee.Controls.Add(this._marriedStateTextBox);
             this._employee.Controls.Add(this.label12);
             this._employee.Controls.Add(this._jobStateTextBox);
             this._employee.Controls.Add(this.label11);
             this._employee.Controls.Add(this._phoneTextBox);
             this._employee.Controls.Add(this.label10);
-            this._employee.Controls.Add(this._bloodTextBox);
             this._employee.Controls.Add(this.label9);
-            this._employee.Controls.Add(this._militaryTextBox);
             this._employee.Controls.Add(this.label8);
             this._employee.Controls.Add(this._emerPhoneTextBox);
             this._employee.Controls.Add(this.label7);
@@ -130,7 +131,6 @@
             this._employee.Controls.Add(this.label6);
             this._employee.Controls.Add(this._addrTextBox);
             this._employee.Controls.Add(this.label5);
-            this._employee.Controls.Add(this._sexTextBox);
             this._employee.Controls.Add(this.label4);
             this._employee.Controls.Add(this._ssnTextBox);
             this._employee.Controls.Add(this.label3);
@@ -147,6 +147,62 @@
             this._employee.TabIndex = 0;
             this._employee.Text = "Employee";
             this._employee.UseVisualStyleBackColor = true;
+            // 
+            // _militaryComboBox
+            // 
+            this._militaryComboBox.FormattingEnabled = true;
+            this._militaryComboBox.Items.AddRange(new object[] {
+            "役畢",
+            "屆退伍",
+            "未役",
+            "待役",
+            "免役"});
+            this._militaryComboBox.Location = new System.Drawing.Point(525, 155);
+            this._militaryComboBox.Name = "_militaryComboBox";
+            this._militaryComboBox.Size = new System.Drawing.Size(57, 20);
+            this._militaryComboBox.TabIndex = 39;
+            this._militaryComboBox.Text = "役畢";
+            // 
+            // _marriedStateComboBox
+            // 
+            this._marriedStateComboBox.FormattingEnabled = true;
+            this._marriedStateComboBox.Items.AddRange(new object[] {
+            "未婚",
+            "已婚",
+            "離異",
+            "喪偶"});
+            this._marriedStateComboBox.Location = new System.Drawing.Point(525, 244);
+            this._marriedStateComboBox.Name = "_marriedStateComboBox";
+            this._marriedStateComboBox.Size = new System.Drawing.Size(57, 20);
+            this._marriedStateComboBox.TabIndex = 38;
+            this._marriedStateComboBox.Text = "未婚";
+            // 
+            // _bloodComboBox
+            // 
+            this._bloodComboBox.FormattingEnabled = true;
+            this._bloodComboBox.Items.AddRange(new object[] {
+            "A",
+            "B",
+            "O",
+            "AB"});
+            this._bloodComboBox.Location = new System.Drawing.Point(229, 245);
+            this._bloodComboBox.Name = "_bloodComboBox";
+            this._bloodComboBox.Size = new System.Drawing.Size(42, 20);
+            this._bloodComboBox.TabIndex = 37;
+            this._bloodComboBox.Text = "A";
+            // 
+            // _sexComboBox
+            // 
+            this._sexComboBox.FormattingEnabled = true;
+            this._sexComboBox.Items.AddRange(new object[] {
+            "男",
+            "女"});
+            this._sexComboBox.Location = new System.Drawing.Point(228, 200);
+            this._sexComboBox.MaxDropDownItems = 2;
+            this._sexComboBox.Name = "_sexComboBox";
+            this._sexComboBox.Size = new System.Drawing.Size(43, 20);
+            this._sexComboBox.TabIndex = 36;
+            this._sexComboBox.Text = "男";
             // 
             // _birthDateTimePicker
             // 
@@ -203,9 +259,11 @@
             // _basicSalaryTextBox
             // 
             this._basicSalaryTextBox.Location = new System.Drawing.Point(525, 329);
+            this._basicSalaryTextBox.MaxLength = 10;
             this._basicSalaryTextBox.Name = "_basicSalaryTextBox";
             this._basicSalaryTextBox.Size = new System.Drawing.Size(100, 22);
             this._basicSalaryTextBox.TabIndex = 14;
+            this._basicSalaryTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPressNumberOnlyTextBox);
             // 
             // label13
             // 
@@ -230,6 +288,7 @@
             // _spouseTextBox
             // 
             this._spouseTextBox.Location = new System.Drawing.Point(525, 284);
+            this._spouseTextBox.MaxLength = 10;
             this._spouseTextBox.Name = "_spouseTextBox";
             this._spouseTextBox.Size = new System.Drawing.Size(100, 22);
             this._spouseTextBox.TabIndex = 13;
@@ -244,13 +303,6 @@
             this.label15.TabIndex = 24;
             this.label15.Text = "配偶：";
             // 
-            // _marriedStateTextBox
-            // 
-            this._marriedStateTextBox.Location = new System.Drawing.Point(525, 239);
-            this._marriedStateTextBox.Name = "_marriedStateTextBox";
-            this._marriedStateTextBox.Size = new System.Drawing.Size(100, 22);
-            this._marriedStateTextBox.TabIndex = 12;
-            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -263,7 +315,7 @@
             // 
             // _jobStateTextBox
             // 
-            this._jobStateTextBox.Location = new System.Drawing.Point(525, 194);
+            this._jobStateTextBox.Location = new System.Drawing.Point(525, 196);
             this._jobStateTextBox.Name = "_jobStateTextBox";
             this._jobStateTextBox.Size = new System.Drawing.Size(100, 22);
             this._jobStateTextBox.TabIndex = 11;
@@ -281,9 +333,11 @@
             // _phoneTextBox
             // 
             this._phoneTextBox.Location = new System.Drawing.Point(228, 334);
+            this._phoneTextBox.MaxLength = 10;
             this._phoneTextBox.Name = "_phoneTextBox";
             this._phoneTextBox.Size = new System.Drawing.Size(100, 22);
             this._phoneTextBox.TabIndex = 6;
+            this._phoneTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPressNumberOnlyTextBox);
             // 
             // label10
             // 
@@ -295,13 +349,6 @@
             this.label10.TabIndex = 18;
             this.label10.Text = "連絡電話：";
             // 
-            // _bloodTextBox
-            // 
-            this._bloodTextBox.Location = new System.Drawing.Point(228, 244);
-            this._bloodTextBox.Name = "_bloodTextBox";
-            this._bloodTextBox.Size = new System.Drawing.Size(100, 22);
-            this._bloodTextBox.TabIndex = 5;
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -311,13 +358,6 @@
             this.label9.Size = new System.Drawing.Size(57, 20);
             this.label9.TabIndex = 16;
             this.label9.Text = "血型：";
-            // 
-            // _militaryTextBox
-            // 
-            this._militaryTextBox.Location = new System.Drawing.Point(525, 149);
-            this._militaryTextBox.Name = "_militaryTextBox";
-            this._militaryTextBox.Size = new System.Drawing.Size(100, 22);
-            this._militaryTextBox.TabIndex = 10;
             // 
             // label8
             // 
@@ -332,9 +372,11 @@
             // _emerPhoneTextBox
             // 
             this._emerPhoneTextBox.Location = new System.Drawing.Point(525, 104);
+            this._emerPhoneTextBox.MaxLength = 10;
             this._emerPhoneTextBox.Name = "_emerPhoneTextBox";
             this._emerPhoneTextBox.Size = new System.Drawing.Size(100, 22);
             this._emerPhoneTextBox.TabIndex = 9;
+            this._emerPhoneTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPressNumberOnlyTextBox);
             // 
             // label7
             // 
@@ -349,6 +391,7 @@
             // _emerPersonTextBox
             // 
             this._emerPersonTextBox.Location = new System.Drawing.Point(525, 59);
+            this._emerPersonTextBox.MaxLength = 10;
             this._emerPersonTextBox.Name = "_emerPersonTextBox";
             this._emerPersonTextBox.Size = new System.Drawing.Size(100, 22);
             this._emerPersonTextBox.TabIndex = 8;
@@ -380,13 +423,6 @@
             this.label5.TabIndex = 8;
             this.label5.Text = "住址：";
             // 
-            // _sexTextBox
-            // 
-            this._sexTextBox.Location = new System.Drawing.Point(228, 199);
-            this._sexTextBox.Name = "_sexTextBox";
-            this._sexTextBox.Size = new System.Drawing.Size(100, 22);
-            this._sexTextBox.TabIndex = 4;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -401,6 +437,7 @@
             // _ssnTextBox
             // 
             this._ssnTextBox.Location = new System.Drawing.Point(228, 154);
+            this._ssnTextBox.MaxLength = 10;
             this._ssnTextBox.Name = "_ssnTextBox";
             this._ssnTextBox.Size = new System.Drawing.Size(100, 22);
             this._ssnTextBox.TabIndex = 3;
@@ -418,6 +455,7 @@
             // _emplNameTextBox
             // 
             this._emplNameTextBox.Location = new System.Drawing.Point(228, 109);
+            this._emplNameTextBox.MaxLength = 10;
             this._emplNameTextBox.Name = "_emplNameTextBox";
             this._emplNameTextBox.Size = new System.Drawing.Size(100, 22);
             this._emplNameTextBox.TabIndex = 2;
@@ -610,15 +648,12 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox _spouseTextBox;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox _marriedStateTextBox;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox _jobStateTextBox;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox _phoneTextBox;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox _bloodTextBox;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox _militaryTextBox;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox _emerPhoneTextBox;
         private System.Windows.Forms.Label label7;
@@ -626,7 +661,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox _addrTextBox;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox _sexTextBox;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox _ssnTextBox;
         private System.Windows.Forms.Label label3;
@@ -634,5 +668,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button _addEmplDataButton;
         private System.Windows.Forms.DateTimePicker _birthDateTimePicker;
+        private System.Windows.Forms.ComboBox _sexComboBox;
+        private System.Windows.Forms.ComboBox _bloodComboBox;
+        private System.Windows.Forms.ComboBox _marriedStateComboBox;
+        private System.Windows.Forms.ComboBox _militaryComboBox;
     }
 }
