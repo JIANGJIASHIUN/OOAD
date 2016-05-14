@@ -5,12 +5,13 @@ using System.Linq;
 using System;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
+using OOAD_HR_System.Service;
 
 namespace OOAD_HR_System.Controller
 {
     class EmployeeController
     {
-        EmployeeClass ec = new EmployeeClass();
+        EmployeeService _employeeService = new EmployeeService();
 
         //建構子
         public EmployeeController()
@@ -28,7 +29,7 @@ namespace OOAD_HR_System.Controller
             }
             else
             {
-                ec.setId(oldId, newId);
+                _employeeService.setId(oldId, newId);
                 return true;
             }
         }
@@ -43,7 +44,7 @@ namespace OOAD_HR_System.Controller
             }
             else
             {
-                ec.setName(name);
+                _employeeService.setName(name);
                 return true;
             }
         }
@@ -54,7 +55,7 @@ namespace OOAD_HR_System.Controller
             //判斷員工身分證字號是否合乎規格
             if (CheckSsn(ssn))
             {
-                ec.setSsn(id, ssn);
+                _employeeService.setSsn(id, ssn);
                 return true;
             }
             return false;
@@ -85,7 +86,7 @@ namespace OOAD_HR_System.Controller
             }
             else
             {
-                ec.setSex(id, sex);
+                _employeeService.setSex(id, sex);
                 return true;
             }
         }
@@ -100,7 +101,7 @@ namespace OOAD_HR_System.Controller
             }
             else
             {
-                ec.setBlood(id, blood);
+                _employeeService.setBlood(id, blood);
                 return true;
             }
         }
@@ -115,7 +116,7 @@ namespace OOAD_HR_System.Controller
             }
             else
             {
-                ec.setPhone(id, phone);
+                _employeeService.setPhone(id, phone);
                 return true;
             }
         }
@@ -130,7 +131,7 @@ namespace OOAD_HR_System.Controller
             }
             else
             {
-                ec.setAddress(id, address);
+                _employeeService.setAddress(id, address);
                 return true;
             }
         }
@@ -145,7 +146,7 @@ namespace OOAD_HR_System.Controller
             }
             else
             {
-                ec.setEmerPerson(id, person);
+                _employeeService.setEmerPerson(id, person);
                 return true;
             }
         }
@@ -160,7 +161,7 @@ namespace OOAD_HR_System.Controller
             }
             else
             {
-                ec.setEmerPhone(id, phone);
+                _employeeService.setEmerPhone(id, phone);
                 return true;
             }
         }
@@ -175,7 +176,7 @@ namespace OOAD_HR_System.Controller
             }
             else
             {
-                ec.setMilitary(id, military);
+                _employeeService.setMilitary(id, military);
                 return true;
             }
         }
@@ -190,7 +191,7 @@ namespace OOAD_HR_System.Controller
             }
             else
             {
-                ec.setJobState(id, state);
+                _employeeService.setJobState(id, state);
                 return true;
             }
         }
@@ -205,7 +206,7 @@ namespace OOAD_HR_System.Controller
             }
             else
             {
-                ec.setMarriedState(id, marriedState);
+                _employeeService.setMarriedState(id, marriedState);
                 return true;
             }
         }
@@ -217,18 +218,18 @@ namespace OOAD_HR_System.Controller
             if (string.Equals(string.Empty, spouse))
             {
                 //若為空，則輸入"無"
-                ec.setSpouse(id, "無");
+                _employeeService.setSpouse(id, "無");
             }
             else
             {
-                ec.setSpouse(id, spouse);
+                _employeeService.setSpouse(id, spouse);
             }
         }
 
         //設定員工生日
         public void SetBirth(string id, DateTime birth)
         {
-            ec.setBirth(id, birth);
+            _employeeService.setBirth(id, birth);
         }
 
         //設定員工底薪
@@ -248,7 +249,7 @@ namespace OOAD_HR_System.Controller
                 }
                 else
                 {
-                    ec.setBasicSalary(id, convertBasicSalary);
+                    _employeeService.setBasicSalary(id, convertBasicSalary);
                     return true;
                 }
             }
@@ -264,7 +265,7 @@ namespace OOAD_HR_System.Controller
             }
             else
             {
-                ec.setDeptId(id, deptId);
+                _employeeService.setDeptId(id, deptId);
                 return true;
             }
         }
@@ -279,10 +280,14 @@ namespace OOAD_HR_System.Controller
             }
             else
             {
-                ec.setPositionId(id, positionId);
+                _employeeService.setPositionId(id, positionId);
                 return true;
             }
         }
 
+        public void InsertData()
+        {
+            _employeeService.InsertData();
+        }
     }
 }

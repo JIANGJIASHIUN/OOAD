@@ -46,7 +46,6 @@
             this._spouseTextBox = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this._jobStateTextBox = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this._phoneTextBox = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -76,6 +75,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.flieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this._jobStateComboBox = new System.Windows.Forms.ComboBox();
             this._mainFunctionPage.SuspendLayout();
             this._employee.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -103,6 +103,7 @@
             // 
             // _employee
             // 
+            this._employee.Controls.Add(this._jobStateComboBox);
             this._employee.Controls.Add(this._militaryComboBox);
             this._employee.Controls.Add(this._marriedStateComboBox);
             this._employee.Controls.Add(this._bloodComboBox);
@@ -119,7 +120,6 @@
             this._employee.Controls.Add(this._spouseTextBox);
             this._employee.Controls.Add(this.label15);
             this._employee.Controls.Add(this.label12);
-            this._employee.Controls.Add(this._jobStateTextBox);
             this._employee.Controls.Add(this.label11);
             this._employee.Controls.Add(this._phoneTextBox);
             this._employee.Controls.Add(this.label10);
@@ -159,8 +159,8 @@
             "免役"});
             this._militaryComboBox.Location = new System.Drawing.Point(525, 155);
             this._militaryComboBox.Name = "_militaryComboBox";
-            this._militaryComboBox.Size = new System.Drawing.Size(57, 20);
-            this._militaryComboBox.TabIndex = 39;
+            this._militaryComboBox.Size = new System.Drawing.Size(75, 20);
+            this._militaryComboBox.TabIndex = 11;
             this._militaryComboBox.Text = "役畢";
             // 
             // _marriedStateComboBox
@@ -173,8 +173,8 @@
             "喪偶"});
             this._marriedStateComboBox.Location = new System.Drawing.Point(525, 244);
             this._marriedStateComboBox.Name = "_marriedStateComboBox";
-            this._marriedStateComboBox.Size = new System.Drawing.Size(57, 20);
-            this._marriedStateComboBox.TabIndex = 38;
+            this._marriedStateComboBox.Size = new System.Drawing.Size(75, 20);
+            this._marriedStateComboBox.TabIndex = 13;
             this._marriedStateComboBox.Text = "未婚";
             // 
             // _bloodComboBox
@@ -188,7 +188,7 @@
             this._bloodComboBox.Location = new System.Drawing.Point(229, 245);
             this._bloodComboBox.Name = "_bloodComboBox";
             this._bloodComboBox.Size = new System.Drawing.Size(42, 20);
-            this._bloodComboBox.TabIndex = 37;
+            this._bloodComboBox.TabIndex = 5;
             this._bloodComboBox.Text = "A";
             // 
             // _sexComboBox
@@ -201,7 +201,7 @@
             this._sexComboBox.MaxDropDownItems = 2;
             this._sexComboBox.Name = "_sexComboBox";
             this._sexComboBox.Size = new System.Drawing.Size(43, 20);
-            this._sexComboBox.TabIndex = 36;
+            this._sexComboBox.TabIndex = 4;
             this._sexComboBox.Text = "男";
             // 
             // _birthDateTimePicker
@@ -209,7 +209,7 @@
             this._birthDateTimePicker.Location = new System.Drawing.Point(228, 291);
             this._birthDateTimePicker.Name = "_birthDateTimePicker";
             this._birthDateTimePicker.Size = new System.Drawing.Size(115, 22);
-            this._birthDateTimePicker.TabIndex = 35;
+            this._birthDateTimePicker.TabIndex = 6;
             this._birthDateTimePicker.Value = new System.DateTime(1993, 1, 1, 0, 0, 0, 0);
             // 
             // _addEmplDataButton
@@ -217,7 +217,7 @@
             this._addEmplDataButton.Location = new System.Drawing.Point(549, 496);
             this._addEmplDataButton.Name = "_addEmplDataButton";
             this._addEmplDataButton.Size = new System.Drawing.Size(75, 23);
-            this._addEmplDataButton.TabIndex = 17;
+            this._addEmplDataButton.TabIndex = 18;
             this._addEmplDataButton.Text = "新增資料";
             this._addEmplDataButton.UseVisualStyleBackColor = true;
             this._addEmplDataButton.Click += new System.EventHandler(this.ClickAddEmplDataButtonbutton);
@@ -227,7 +227,7 @@
             this._positionIdTextBox.Location = new System.Drawing.Point(525, 419);
             this._positionIdTextBox.Name = "_positionIdTextBox";
             this._positionIdTextBox.Size = new System.Drawing.Size(100, 22);
-            this._positionIdTextBox.TabIndex = 16;
+            this._positionIdTextBox.TabIndex = 17;
             // 
             // label17
             // 
@@ -244,7 +244,7 @@
             this._deptIdTextBox.Location = new System.Drawing.Point(525, 374);
             this._deptIdTextBox.Name = "_deptIdTextBox";
             this._deptIdTextBox.Size = new System.Drawing.Size(100, 22);
-            this._deptIdTextBox.TabIndex = 15;
+            this._deptIdTextBox.TabIndex = 16;
             // 
             // label16
             // 
@@ -262,7 +262,7 @@
             this._basicSalaryTextBox.MaxLength = 10;
             this._basicSalaryTextBox.Name = "_basicSalaryTextBox";
             this._basicSalaryTextBox.Size = new System.Drawing.Size(100, 22);
-            this._basicSalaryTextBox.TabIndex = 14;
+            this._basicSalaryTextBox.TabIndex = 15;
             this._basicSalaryTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPressNumberOnlyTextBox);
             // 
             // label13
@@ -291,7 +291,7 @@
             this._spouseTextBox.MaxLength = 10;
             this._spouseTextBox.Name = "_spouseTextBox";
             this._spouseTextBox.Size = new System.Drawing.Size(100, 22);
-            this._spouseTextBox.TabIndex = 13;
+            this._spouseTextBox.TabIndex = 14;
             // 
             // label15
             // 
@@ -313,13 +313,6 @@
             this.label12.TabIndex = 22;
             this.label12.Text = "婚姻狀態：";
             // 
-            // _jobStateTextBox
-            // 
-            this._jobStateTextBox.Location = new System.Drawing.Point(525, 196);
-            this._jobStateTextBox.Name = "_jobStateTextBox";
-            this._jobStateTextBox.Size = new System.Drawing.Size(100, 22);
-            this._jobStateTextBox.TabIndex = 11;
-            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -336,7 +329,7 @@
             this._phoneTextBox.MaxLength = 10;
             this._phoneTextBox.Name = "_phoneTextBox";
             this._phoneTextBox.Size = new System.Drawing.Size(100, 22);
-            this._phoneTextBox.TabIndex = 6;
+            this._phoneTextBox.TabIndex = 7;
             this._phoneTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPressNumberOnlyTextBox);
             // 
             // label10
@@ -375,7 +368,7 @@
             this._emerPhoneTextBox.MaxLength = 10;
             this._emerPhoneTextBox.Name = "_emerPhoneTextBox";
             this._emerPhoneTextBox.Size = new System.Drawing.Size(100, 22);
-            this._emerPhoneTextBox.TabIndex = 9;
+            this._emerPhoneTextBox.TabIndex = 10;
             this._emerPhoneTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPressNumberOnlyTextBox);
             // 
             // label7
@@ -394,7 +387,7 @@
             this._emerPersonTextBox.MaxLength = 10;
             this._emerPersonTextBox.Name = "_emerPersonTextBox";
             this._emerPersonTextBox.Size = new System.Drawing.Size(100, 22);
-            this._emerPersonTextBox.TabIndex = 8;
+            this._emerPersonTextBox.TabIndex = 9;
             // 
             // label6
             // 
@@ -411,7 +404,7 @@
             this._addrTextBox.Location = new System.Drawing.Point(228, 379);
             this._addrTextBox.Name = "_addrTextBox";
             this._addrTextBox.Size = new System.Drawing.Size(100, 22);
-            this._addrTextBox.TabIndex = 7;
+            this._addrTextBox.TabIndex = 8;
             // 
             // label5
             // 
@@ -600,6 +593,21 @@
             this.logoutToolStripMenuItem.Text = "Logout";
             this.logoutToolStripMenuItem.Click += new System.EventHandler(this.ClickLogoutToolStripMenuItem);
             // 
+            // _jobStateComboBox
+            // 
+            this._jobStateComboBox.FormattingEnabled = true;
+            this._jobStateComboBox.Items.AddRange(new object[] {
+            "在職",
+            "復職",
+            "留職停薪",
+            "停職",
+            "離職"});
+            this._jobStateComboBox.Location = new System.Drawing.Point(525, 199);
+            this._jobStateComboBox.Name = "_jobStateComboBox";
+            this._jobStateComboBox.Size = new System.Drawing.Size(75, 20);
+            this._jobStateComboBox.TabIndex = 12;
+            this._jobStateComboBox.Text = "在職";
+            // 
             // _mainFunction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -649,7 +657,6 @@
         private System.Windows.Forms.TextBox _spouseTextBox;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox _jobStateTextBox;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox _phoneTextBox;
         private System.Windows.Forms.Label label10;
@@ -672,5 +679,6 @@
         private System.Windows.Forms.ComboBox _bloodComboBox;
         private System.Windows.Forms.ComboBox _marriedStateComboBox;
         private System.Windows.Forms.ComboBox _militaryComboBox;
+        private System.Windows.Forms.ComboBox _jobStateComboBox;
     }
 }
