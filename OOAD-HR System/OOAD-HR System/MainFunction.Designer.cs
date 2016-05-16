@@ -28,42 +28,51 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this._mainFunctionPage = new System.Windows.Forms.TabControl();
             this._employee = new System.Windows.Forms.TabPage();
-            this._militaryComboBox = new System.Windows.Forms.ComboBox();
-            this._marriedStateComboBox = new System.Windows.Forms.ComboBox();
-            this._bloodComboBox = new System.Windows.Forms.ComboBox();
-            this._sexComboBox = new System.Windows.Forms.ComboBox();
-            this._birthDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this._addEmplDataButton = new System.Windows.Forms.Button();
-            this._positionIdTextBox = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this._deptIdTextBox = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this._basicSalaryTextBox = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this._spouseTextBox = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this._phoneTextBox = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this._emerPhoneTextBox = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this._emerPersonTextBox = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this._addrTextBox = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this._ssnTextBox = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this._emplNameTextBox = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this._emplIdTextBox = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this._employeePage = new System.Windows.Forms.TabControl();
+            this._newEmployee = new System.Windows.Forms.TabPage();
+            this._newEmplPositionCB = new System.Windows.Forms.ComboBox();
+            this.positionBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.positionDataSet = new OOAD_HR_System.positionDataSet();
+            this._newEmplSexCB = new System.Windows.Forms.ComboBox();
+            this._insertEmplButton = new System.Windows.Forms.Button();
+            this._newEmplBloodCB = new System.Windows.Forms.ComboBox();
+            this._newEmplBloodLB = new System.Windows.Forms.Label();
+            this._newEmplDeptCB = new System.Windows.Forms.ComboBox();
+            this.departmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.deptDataSet = new OOAD_HR_System.deptDataSet();
+            this._newEmplBasicSalaryTB = new System.Windows.Forms.TextBox();
+            this._newEmplJobStatCB = new System.Windows.Forms.ComboBox();
+            this._newEmplSpouseTB = new System.Windows.Forms.TextBox();
+            this._newEmplMarriedStatCB = new System.Windows.Forms.ComboBox();
+            this._newEmplMilitaryStatCB = new System.Windows.Forms.ComboBox();
+            this._newEmplEmerPhoneTB = new System.Windows.Forms.TextBox();
+            this._newEmplEmerPersonTB = new System.Windows.Forms.TextBox();
+            this._newEmplAddrTB = new System.Windows.Forms.TextBox();
+            this._newEmplPhoneTB = new System.Windows.Forms.TextBox();
+            this._newEmpllSsnTB = new System.Windows.Forms.TextBox();
+            this._newEmplBirthDP = new System.Windows.Forms.DateTimePicker();
+            this._newEmplNameTB = new System.Windows.Forms.TextBox();
+            this._newEmplIDTB = new System.Windows.Forms.TextBox();
+            this._newEmplPositionIDLB = new System.Windows.Forms.Label();
+            this._newEmplDeptIDLB = new System.Windows.Forms.Label();
+            this._newEmplBasicSalaryLB = new System.Windows.Forms.Label();
+            this._newEmplBirthLB = new System.Windows.Forms.Label();
+            this._newEmplSpouseLB = new System.Windows.Forms.Label();
+            this._newEmplMarriedStatLB = new System.Windows.Forms.Label();
+            this._newEmplJobStatLB = new System.Windows.Forms.Label();
+            this._newEmplMilitaryLB = new System.Windows.Forms.Label();
+            this._newEmplEmerPhoneLB = new System.Windows.Forms.Label();
+            this._newEmplEmerPersonLB = new System.Windows.Forms.Label();
+            this._newEmplAddrLB = new System.Windows.Forms.Label();
+            this._newEmplPhoneLB = new System.Windows.Forms.Label();
+            this._newEmplSexLB = new System.Windows.Forms.Label();
+            this._newEmplSsnLB = new System.Windows.Forms.Label();
+            this._newEmplNameLB = new System.Windows.Forms.Label();
+            this._newEmplIDLB = new System.Windows.Forms.Label();
+            this._editEmployee = new System.Windows.Forms.TabPage();
             this._workAttendance = new System.Windows.Forms.TabPage();
             this._reimburse = new System.Windows.Forms.TabPage();
             this._bonus = new System.Windows.Forms.TabPage();
@@ -72,13 +81,54 @@
             this._careerPlanning = new System.Windows.Forms.TabPage();
             this._report = new System.Windows.Forms.TabPage();
             this._authorization = new System.Windows.Forms.TabPage();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.flieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this._jobStateComboBox = new System.Windows.Forms.ComboBox();
+            this._logoutButton = new System.Windows.Forms.Button();
+            this.departmentTableAdapter = new OOAD_HR_System.deptDataSetTableAdapters.departmentTableAdapter();
+            this.positionTableAdapter = new OOAD_HR_System.positionDataSetTableAdapters.positionTableAdapter();
+            this._editEmplPositionCB = new System.Windows.Forms.ComboBox();
+            this._editEmplSexCB = new System.Windows.Forms.ComboBox();
+            this._editEmplButton = new System.Windows.Forms.Button();
+            this._editEmplBloodCB = new System.Windows.Forms.ComboBox();
+            this._editEmplBloodLB = new System.Windows.Forms.Label();
+            this._editEmplDeptCB = new System.Windows.Forms.ComboBox();
+            this._editEmplBasicSalaryTB = new System.Windows.Forms.TextBox();
+            this._editEmplJobStatCB = new System.Windows.Forms.ComboBox();
+            this._editEmplSpouseTB = new System.Windows.Forms.TextBox();
+            this._editEmplMarriedStatCB = new System.Windows.Forms.ComboBox();
+            this._editEmplMilitaryStatCB = new System.Windows.Forms.ComboBox();
+            this._editEmplEmerPhoneTB = new System.Windows.Forms.TextBox();
+            this._editEmplEmerPersonTB = new System.Windows.Forms.TextBox();
+            this._editEmplAddrTB = new System.Windows.Forms.TextBox();
+            this._editEmplPhoneTB = new System.Windows.Forms.TextBox();
+            this._editEmplSsnTB = new System.Windows.Forms.TextBox();
+            this._editEmplBirthDTP = new System.Windows.Forms.DateTimePicker();
+            this._editEmplNameTB = new System.Windows.Forms.TextBox();
+            this._editEmplIDTB = new System.Windows.Forms.TextBox();
+            this._editEmplPositionLB = new System.Windows.Forms.Label();
+            this._editEmplDeptLB = new System.Windows.Forms.Label();
+            this._editEmplBasicSalaryLB = new System.Windows.Forms.Label();
+            this._editEmplBirthLB = new System.Windows.Forms.Label();
+            this._editEmplSpouseLB = new System.Windows.Forms.Label();
+            this._editMarriedStatLB = new System.Windows.Forms.Label();
+            this._editEmplJobStatLB = new System.Windows.Forms.Label();
+            this._editEmplMilitaryStatLB = new System.Windows.Forms.Label();
+            this._editEmplEmerPhone = new System.Windows.Forms.Label();
+            this._editEmplEmerPersonLB = new System.Windows.Forms.Label();
+            this._editEmplAddrLB = new System.Windows.Forms.Label();
+            this._editEmplPhoneLB = new System.Windows.Forms.Label();
+            this._editEmplSexLB = new System.Windows.Forms.Label();
+            this._editEmplSsnLB = new System.Windows.Forms.Label();
+            this._editEmplNameLB = new System.Windows.Forms.Label();
+            this.editEmplIDLB = new System.Windows.Forms.Label();
+            this._searchEmplButtom = new System.Windows.Forms.Button();
             this._mainFunctionPage.SuspendLayout();
             this._employee.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
+            this._employeePage.SuspendLayout();
+            this._newEmployee.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.positionBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.positionDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deptDataSet)).BeginInit();
+            this._editEmployee.SuspendLayout();
             this.SuspendLayout();
             // 
             // _mainFunctionPage
@@ -92,541 +142,947 @@
             this._mainFunctionPage.Controls.Add(this._careerPlanning);
             this._mainFunctionPage.Controls.Add(this._report);
             this._mainFunctionPage.Controls.Add(this._authorization);
-            this._mainFunctionPage.Dock = System.Windows.Forms.DockStyle.Fill;
             this._mainFunctionPage.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this._mainFunctionPage.Location = new System.Drawing.Point(0, 24);
-            this._mainFunctionPage.Margin = new System.Windows.Forms.Padding(2);
+            this._mainFunctionPage.Location = new System.Drawing.Point(12, 12);
             this._mainFunctionPage.Name = "_mainFunctionPage";
             this._mainFunctionPage.SelectedIndex = 0;
-            this._mainFunctionPage.Size = new System.Drawing.Size(766, 589);
+            this._mainFunctionPage.Size = new System.Drawing.Size(1566, 910);
             this._mainFunctionPage.TabIndex = 0;
             // 
             // _employee
             // 
-            this._employee.Controls.Add(this._jobStateComboBox);
-            this._employee.Controls.Add(this._militaryComboBox);
-            this._employee.Controls.Add(this._marriedStateComboBox);
-            this._employee.Controls.Add(this._bloodComboBox);
-            this._employee.Controls.Add(this._sexComboBox);
-            this._employee.Controls.Add(this._birthDateTimePicker);
-            this._employee.Controls.Add(this._addEmplDataButton);
-            this._employee.Controls.Add(this._positionIdTextBox);
-            this._employee.Controls.Add(this.label17);
-            this._employee.Controls.Add(this._deptIdTextBox);
-            this._employee.Controls.Add(this.label16);
-            this._employee.Controls.Add(this._basicSalaryTextBox);
-            this._employee.Controls.Add(this.label13);
-            this._employee.Controls.Add(this.label14);
-            this._employee.Controls.Add(this._spouseTextBox);
-            this._employee.Controls.Add(this.label15);
-            this._employee.Controls.Add(this.label12);
-            this._employee.Controls.Add(this.label11);
-            this._employee.Controls.Add(this._phoneTextBox);
-            this._employee.Controls.Add(this.label10);
-            this._employee.Controls.Add(this.label9);
-            this._employee.Controls.Add(this.label8);
-            this._employee.Controls.Add(this._emerPhoneTextBox);
-            this._employee.Controls.Add(this.label7);
-            this._employee.Controls.Add(this._emerPersonTextBox);
-            this._employee.Controls.Add(this.label6);
-            this._employee.Controls.Add(this._addrTextBox);
-            this._employee.Controls.Add(this.label5);
-            this._employee.Controls.Add(this.label4);
-            this._employee.Controls.Add(this._ssnTextBox);
-            this._employee.Controls.Add(this.label3);
-            this._employee.Controls.Add(this._emplNameTextBox);
-            this._employee.Controls.Add(this.label2);
-            this._employee.Controls.Add(this._emplIdTextBox);
-            this._employee.Controls.Add(this.label1);
+            this._employee.Controls.Add(this._employeePage);
             this._employee.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this._employee.Location = new System.Drawing.Point(4, 26);
-            this._employee.Margin = new System.Windows.Forms.Padding(2);
+            this._employee.Location = new System.Drawing.Point(4, 34);
             this._employee.Name = "_employee";
-            this._employee.Padding = new System.Windows.Forms.Padding(2);
-            this._employee.Size = new System.Drawing.Size(758, 559);
+            this._employee.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this._employee.Size = new System.Drawing.Size(1558, 872);
             this._employee.TabIndex = 0;
             this._employee.Text = "Employee";
             this._employee.UseVisualStyleBackColor = true;
             // 
-            // _militaryComboBox
+            // _employeePage
             // 
-            this._militaryComboBox.FormattingEnabled = true;
-            this._militaryComboBox.Items.AddRange(new object[] {
-            "役畢",
-            "屆退伍",
-            "未役",
-            "待役",
-            "免役"});
-            this._militaryComboBox.Location = new System.Drawing.Point(525, 155);
-            this._militaryComboBox.Name = "_militaryComboBox";
-            this._militaryComboBox.Size = new System.Drawing.Size(75, 20);
-            this._militaryComboBox.TabIndex = 11;
-            this._militaryComboBox.Text = "役畢";
+            this._employeePage.Controls.Add(this._newEmployee);
+            this._employeePage.Controls.Add(this._editEmployee);
+            this._employeePage.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this._employeePage.Location = new System.Drawing.Point(8, 8);
+            this._employeePage.Name = "_employeePage";
+            this._employeePage.SelectedIndex = 0;
+            this._employeePage.Size = new System.Drawing.Size(1545, 860);
+            this._employeePage.TabIndex = 0;
             // 
-            // _marriedStateComboBox
+            // _newEmployee
             // 
-            this._marriedStateComboBox.FormattingEnabled = true;
-            this._marriedStateComboBox.Items.AddRange(new object[] {
-            "未婚",
-            "已婚",
-            "離異",
-            "喪偶"});
-            this._marriedStateComboBox.Location = new System.Drawing.Point(525, 244);
-            this._marriedStateComboBox.Name = "_marriedStateComboBox";
-            this._marriedStateComboBox.Size = new System.Drawing.Size(75, 20);
-            this._marriedStateComboBox.TabIndex = 13;
-            this._marriedStateComboBox.Text = "未婚";
+            this._newEmployee.Controls.Add(this._newEmplPositionCB);
+            this._newEmployee.Controls.Add(this._newEmplSexCB);
+            this._newEmployee.Controls.Add(this._insertEmplButton);
+            this._newEmployee.Controls.Add(this._newEmplBloodCB);
+            this._newEmployee.Controls.Add(this._newEmplBloodLB);
+            this._newEmployee.Controls.Add(this._newEmplDeptCB);
+            this._newEmployee.Controls.Add(this._newEmplBasicSalaryTB);
+            this._newEmployee.Controls.Add(this._newEmplJobStatCB);
+            this._newEmployee.Controls.Add(this._newEmplSpouseTB);
+            this._newEmployee.Controls.Add(this._newEmplMarriedStatCB);
+            this._newEmployee.Controls.Add(this._newEmplMilitaryStatCB);
+            this._newEmployee.Controls.Add(this._newEmplEmerPhoneTB);
+            this._newEmployee.Controls.Add(this._newEmplEmerPersonTB);
+            this._newEmployee.Controls.Add(this._newEmplAddrTB);
+            this._newEmployee.Controls.Add(this._newEmplPhoneTB);
+            this._newEmployee.Controls.Add(this._newEmpllSsnTB);
+            this._newEmployee.Controls.Add(this._newEmplBirthDP);
+            this._newEmployee.Controls.Add(this._newEmplNameTB);
+            this._newEmployee.Controls.Add(this._newEmplIDTB);
+            this._newEmployee.Controls.Add(this._newEmplPositionIDLB);
+            this._newEmployee.Controls.Add(this._newEmplDeptIDLB);
+            this._newEmployee.Controls.Add(this._newEmplBasicSalaryLB);
+            this._newEmployee.Controls.Add(this._newEmplBirthLB);
+            this._newEmployee.Controls.Add(this._newEmplSpouseLB);
+            this._newEmployee.Controls.Add(this._newEmplMarriedStatLB);
+            this._newEmployee.Controls.Add(this._newEmplJobStatLB);
+            this._newEmployee.Controls.Add(this._newEmplMilitaryLB);
+            this._newEmployee.Controls.Add(this._newEmplEmerPhoneLB);
+            this._newEmployee.Controls.Add(this._newEmplEmerPersonLB);
+            this._newEmployee.Controls.Add(this._newEmplAddrLB);
+            this._newEmployee.Controls.Add(this._newEmplPhoneLB);
+            this._newEmployee.Controls.Add(this._newEmplSexLB);
+            this._newEmployee.Controls.Add(this._newEmplSsnLB);
+            this._newEmployee.Controls.Add(this._newEmplNameLB);
+            this._newEmployee.Controls.Add(this._newEmplIDLB);
+            this._newEmployee.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this._newEmployee.Location = new System.Drawing.Point(4, 34);
+            this._newEmployee.Name = "_newEmployee";
+            this._newEmployee.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this._newEmployee.Size = new System.Drawing.Size(1537, 822);
+            this._newEmployee.TabIndex = 0;
+            this._newEmployee.Text = "Add";
+            this._newEmployee.UseVisualStyleBackColor = true;
             // 
-            // _bloodComboBox
+            // _newEmplPositionCB
             // 
-            this._bloodComboBox.FormattingEnabled = true;
-            this._bloodComboBox.Items.AddRange(new object[] {
+            this._newEmplPositionCB.DataSource = this.positionBindingSource;
+            this._newEmplPositionCB.DisplayMember = "positionName";
+            this._newEmplPositionCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this._newEmplPositionCB.FormattingEnabled = true;
+            this._newEmplPositionCB.Location = new System.Drawing.Point(146, 624);
+            this._newEmplPositionCB.Name = "_newEmplPositionCB";
+            this._newEmplPositionCB.Size = new System.Drawing.Size(308, 32);
+            this._newEmplPositionCB.TabIndex = 39;
+            this._newEmplPositionCB.ValueMember = "positionID";
+            this._newEmplPositionCB.SelectedIndexChanged += new System.EventHandler(this.ChangedNewEmplPositionCBSelectedIndex);
+            // 
+            // positionBindingSource
+            // 
+            this.positionBindingSource.DataMember = "position";
+            this.positionBindingSource.DataSource = this.positionDataSet;
+            // 
+            // positionDataSet
+            // 
+            this.positionDataSet.DataSetName = "positionDataSet";
+            this.positionDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // _newEmplSexCB
+            // 
+            this._newEmplSexCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this._newEmplSexCB.FormattingEnabled = true;
+            this._newEmplSexCB.Items.AddRange(new object[] {
+            "Male",
+            "Female"});
+            this._newEmplSexCB.Location = new System.Drawing.Point(726, 100);
+            this._newEmplSexCB.Name = "_newEmplSexCB";
+            this._newEmplSexCB.Size = new System.Drawing.Size(121, 32);
+            this._newEmplSexCB.TabIndex = 38;
+            // 
+            // _insertEmplButton
+            // 
+            this._insertEmplButton.Location = new System.Drawing.Point(1220, 718);
+            this._insertEmplButton.Name = "_insertEmplButton";
+            this._insertEmplButton.Size = new System.Drawing.Size(112, 52);
+            this._insertEmplButton.TabIndex = 37;
+            this._insertEmplButton.Text = "Add";
+            this._insertEmplButton.UseVisualStyleBackColor = true;
+            this._insertEmplButton.Click += new System.EventHandler(this.ClickAddEmplButton);
+            // 
+            // _newEmplBloodCB
+            // 
+            this._newEmplBloodCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this._newEmplBloodCB.FormattingEnabled = true;
+            this._newEmplBloodCB.Items.AddRange(new object[] {
             "A",
             "B",
             "O",
             "AB"});
-            this._bloodComboBox.Location = new System.Drawing.Point(229, 245);
-            this._bloodComboBox.Name = "_bloodComboBox";
-            this._bloodComboBox.Size = new System.Drawing.Size(42, 20);
-            this._bloodComboBox.TabIndex = 5;
-            this._bloodComboBox.Text = "A";
+            this._newEmplBloodCB.Location = new System.Drawing.Point(951, 100);
+            this._newEmplBloodCB.Name = "_newEmplBloodCB";
+            this._newEmplBloodCB.Size = new System.Drawing.Size(114, 32);
+            this._newEmplBloodCB.TabIndex = 36;
             // 
-            // _sexComboBox
+            // _newEmplBloodLB
             // 
-            this._sexComboBox.FormattingEnabled = true;
-            this._sexComboBox.Items.AddRange(new object[] {
-            "男",
-            "女"});
-            this._sexComboBox.Location = new System.Drawing.Point(228, 200);
-            this._sexComboBox.MaxDropDownItems = 2;
-            this._sexComboBox.Name = "_sexComboBox";
-            this._sexComboBox.Size = new System.Drawing.Size(43, 20);
-            this._sexComboBox.TabIndex = 4;
-            this._sexComboBox.Text = "男";
+            this._newEmplBloodLB.AutoSize = true;
+            this._newEmplBloodLB.Location = new System.Drawing.Point(874, 108);
+            this._newEmplBloodLB.Name = "_newEmplBloodLB";
+            this._newEmplBloodLB.Size = new System.Drawing.Size(70, 24);
+            this._newEmplBloodLB.TabIndex = 35;
+            this._newEmplBloodLB.Text = "Blood:";
             // 
-            // _birthDateTimePicker
+            // _newEmplDeptCB
             // 
-            this._birthDateTimePicker.Location = new System.Drawing.Point(228, 291);
-            this._birthDateTimePicker.Name = "_birthDateTimePicker";
-            this._birthDateTimePicker.Size = new System.Drawing.Size(115, 22);
-            this._birthDateTimePicker.TabIndex = 6;
-            this._birthDateTimePicker.Value = new System.DateTime(1993, 1, 1, 0, 0, 0, 0);
+            this._newEmplDeptCB.DataSource = this.departmentBindingSource;
+            this._newEmplDeptCB.DisplayMember = "departmentName";
+            this._newEmplDeptCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this._newEmplDeptCB.FormattingEnabled = true;
+            this._newEmplDeptCB.Location = new System.Drawing.Point(182, 558);
+            this._newEmplDeptCB.Name = "_newEmplDeptCB";
+            this._newEmplDeptCB.Size = new System.Drawing.Size(308, 32);
+            this._newEmplDeptCB.TabIndex = 33;
+            this._newEmplDeptCB.ValueMember = "departmentID";
             // 
-            // _addEmplDataButton
+            // departmentBindingSource
             // 
-            this._addEmplDataButton.Location = new System.Drawing.Point(549, 496);
-            this._addEmplDataButton.Name = "_addEmplDataButton";
-            this._addEmplDataButton.Size = new System.Drawing.Size(75, 23);
-            this._addEmplDataButton.TabIndex = 18;
-            this._addEmplDataButton.Text = "新增資料";
-            this._addEmplDataButton.UseVisualStyleBackColor = true;
-            this._addEmplDataButton.Click += new System.EventHandler(this.ClickAddEmplDataButtonbutton);
+            this.departmentBindingSource.DataMember = "department";
+            this.departmentBindingSource.DataSource = this.deptDataSet;
             // 
-            // _positionIdTextBox
+            // deptDataSet
             // 
-            this._positionIdTextBox.Location = new System.Drawing.Point(525, 419);
-            this._positionIdTextBox.Name = "_positionIdTextBox";
-            this._positionIdTextBox.Size = new System.Drawing.Size(100, 22);
-            this._positionIdTextBox.TabIndex = 17;
+            this.deptDataSet.DataSetName = "deptDataSet";
+            this.deptDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // label17
+            // _newEmplBasicSalaryTB
             // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label17.Location = new System.Drawing.Point(430, 421);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(89, 20);
-            this.label17.TabIndex = 32;
-            this.label17.Text = "職位編號：";
+            this._newEmplBasicSalaryTB.Location = new System.Drawing.Point(184, 694);
+            this._newEmplBasicSalaryTB.Name = "_newEmplBasicSalaryTB";
+            this._newEmplBasicSalaryTB.Size = new System.Drawing.Size(300, 36);
+            this._newEmplBasicSalaryTB.TabIndex = 32;
+            this._newEmplBasicSalaryTB.Text = "0";
             // 
-            // _deptIdTextBox
+            // _newEmplJobStatCB
             // 
-            this._deptIdTextBox.Location = new System.Drawing.Point(525, 374);
-            this._deptIdTextBox.Name = "_deptIdTextBox";
-            this._deptIdTextBox.Size = new System.Drawing.Size(100, 22);
-            this._deptIdTextBox.TabIndex = 16;
+            this._newEmplJobStatCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this._newEmplJobStatCB.FormattingEnabled = true;
+            this._newEmplJobStatCB.Items.AddRange(new object[] {
+            "在職",
+            "離職"});
+            this._newEmplJobStatCB.Location = new System.Drawing.Point(164, 486);
+            this._newEmplJobStatCB.Name = "_newEmplJobStatCB";
+            this._newEmplJobStatCB.Size = new System.Drawing.Size(320, 32);
+            this._newEmplJobStatCB.TabIndex = 31;
             // 
-            // label16
+            // _newEmplSpouseTB
             // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label16.Location = new System.Drawing.Point(398, 376);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(121, 20);
-            this.label16.TabIndex = 30;
-            this.label16.Text = "所屬部門編號：";
+            this._newEmplSpouseTB.Location = new System.Drawing.Point(758, 477);
+            this._newEmplSpouseTB.Name = "_newEmplSpouseTB";
+            this._newEmplSpouseTB.ReadOnly = true;
+            this._newEmplSpouseTB.Size = new System.Drawing.Size(223, 36);
+            this._newEmplSpouseTB.TabIndex = 30;
             // 
-            // _basicSalaryTextBox
+            // _newEmplMarriedStatCB
             // 
-            this._basicSalaryTextBox.Location = new System.Drawing.Point(525, 329);
-            this._basicSalaryTextBox.MaxLength = 10;
-            this._basicSalaryTextBox.Name = "_basicSalaryTextBox";
-            this._basicSalaryTextBox.Size = new System.Drawing.Size(100, 22);
-            this._basicSalaryTextBox.TabIndex = 15;
-            this._basicSalaryTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPressNumberOnlyTextBox);
+            this._newEmplMarriedStatCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this._newEmplMarriedStatCB.FormattingEnabled = true;
+            this._newEmplMarriedStatCB.Items.AddRange(new object[] {
+            "未婚",
+            "已婚"});
+            this._newEmplMarriedStatCB.Location = new System.Drawing.Point(828, 410);
+            this._newEmplMarriedStatCB.Name = "_newEmplMarriedStatCB";
+            this._newEmplMarriedStatCB.Size = new System.Drawing.Size(152, 32);
+            this._newEmplMarriedStatCB.TabIndex = 29;
+            this._newEmplMarriedStatCB.SelectedIndexChanged += new System.EventHandler(this.ChangedNewEmplMarriedStatCBSelectedIndex);
             // 
-            // label13
+            // _newEmplMilitaryStatCB
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label13.Location = new System.Drawing.Point(462, 331);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(57, 20);
-            this.label13.TabIndex = 28;
-            this.label13.Text = "底薪：";
+            this._newEmplMilitaryStatCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this._newEmplMilitaryStatCB.FormattingEnabled = true;
+            this._newEmplMilitaryStatCB.Items.AddRange(new object[] {
+            "役畢",
+            "屆退",
+            "待役",
+            "未役",
+            "免役"});
+            this._newEmplMilitaryStatCB.Location = new System.Drawing.Point(828, 320);
+            this._newEmplMilitaryStatCB.Name = "_newEmplMilitaryStatCB";
+            this._newEmplMilitaryStatCB.Size = new System.Drawing.Size(152, 32);
+            this._newEmplMilitaryStatCB.TabIndex = 28;
             // 
-            // label14
+            // _newEmplEmerPhoneTB
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label14.Location = new System.Drawing.Point(133, 291);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(89, 20);
-            this.label14.TabIndex = 26;
-            this.label14.Text = "出生日期：";
+            this._newEmplEmerPhoneTB.Location = new System.Drawing.Point(236, 405);
+            this._newEmplEmerPhoneTB.Name = "_newEmplEmerPhoneTB";
+            this._newEmplEmerPhoneTB.Size = new System.Drawing.Size(248, 36);
+            this._newEmplEmerPhoneTB.TabIndex = 27;
             // 
-            // _spouseTextBox
+            // _newEmplEmerPersonTB
             // 
-            this._spouseTextBox.Location = new System.Drawing.Point(525, 284);
-            this._spouseTextBox.MaxLength = 10;
-            this._spouseTextBox.Name = "_spouseTextBox";
-            this._spouseTextBox.Size = new System.Drawing.Size(100, 22);
-            this._spouseTextBox.TabIndex = 14;
+            this._newEmplEmerPersonTB.Location = new System.Drawing.Point(240, 326);
+            this._newEmplEmerPersonTB.Name = "_newEmplEmerPersonTB";
+            this._newEmplEmerPersonTB.Size = new System.Drawing.Size(244, 36);
+            this._newEmplEmerPersonTB.TabIndex = 26;
             // 
-            // label15
+            // _newEmplAddrTB
             // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label15.Location = new System.Drawing.Point(462, 286);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(57, 20);
-            this.label15.TabIndex = 24;
-            this.label15.Text = "配偶：";
+            this._newEmplAddrTB.Location = new System.Drawing.Point(146, 250);
+            this._newEmplAddrTB.Name = "_newEmplAddrTB";
+            this._newEmplAddrTB.Size = new System.Drawing.Size(1018, 36);
+            this._newEmplAddrTB.TabIndex = 25;
             // 
-            // label12
+            // _newEmplPhoneTB
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label12.Location = new System.Drawing.Point(430, 241);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(89, 20);
-            this.label12.TabIndex = 22;
-            this.label12.Text = "婚姻狀態：";
+            this._newEmplPhoneTB.Location = new System.Drawing.Point(828, 182);
+            this._newEmplPhoneTB.Name = "_newEmplPhoneTB";
+            this._newEmplPhoneTB.Size = new System.Drawing.Size(336, 36);
+            this._newEmplPhoneTB.TabIndex = 24;
             // 
-            // label11
+            // _newEmpllSsnTB
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label11.Location = new System.Drawing.Point(430, 196);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(89, 20);
-            this.label11.TabIndex = 20;
-            this.label11.Text = "工作狀態：";
+            this._newEmpllSsnTB.Location = new System.Drawing.Point(104, 177);
+            this._newEmpllSsnTB.Name = "_newEmpllSsnTB";
+            this._newEmpllSsnTB.Size = new System.Drawing.Size(382, 36);
+            this._newEmpllSsnTB.TabIndex = 20;
             // 
-            // _phoneTextBox
+            // _newEmplBirthDP
             // 
-            this._phoneTextBox.Location = new System.Drawing.Point(228, 334);
-            this._phoneTextBox.MaxLength = 10;
-            this._phoneTextBox.Name = "_phoneTextBox";
-            this._phoneTextBox.Size = new System.Drawing.Size(100, 22);
-            this._phoneTextBox.TabIndex = 7;
-            this._phoneTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPressNumberOnlyTextBox);
+            this._newEmplBirthDP.Location = new System.Drawing.Point(782, 28);
+            this._newEmplBirthDP.Name = "_newEmplBirthDP";
+            this._newEmplBirthDP.Size = new System.Drawing.Size(200, 36);
+            this._newEmplBirthDP.TabIndex = 19;
             // 
-            // label10
+            // _newEmplNameTB
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label10.Location = new System.Drawing.Point(133, 336);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(89, 20);
-            this.label10.TabIndex = 18;
-            this.label10.Text = "連絡電話：";
+            this._newEmplNameTB.Location = new System.Drawing.Point(124, 105);
+            this._newEmplNameTB.Name = "_newEmplNameTB";
+            this._newEmplNameTB.Size = new System.Drawing.Size(360, 36);
+            this._newEmplNameTB.TabIndex = 17;
             // 
-            // label9
+            // _newEmplIDTB
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label9.Location = new System.Drawing.Point(165, 246);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(57, 20);
-            this.label9.TabIndex = 16;
-            this.label9.Text = "血型：";
+            this._newEmplIDTB.Location = new System.Drawing.Point(190, 28);
+            this._newEmplIDTB.Name = "_newEmplIDTB";
+            this._newEmplIDTB.Size = new System.Drawing.Size(294, 36);
+            this._newEmplIDTB.TabIndex = 16;
             // 
-            // label8
+            // _newEmplPositionIDLB
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label8.Location = new System.Drawing.Point(430, 151);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(89, 20);
-            this.label8.TabIndex = 14;
-            this.label8.Text = "兵役狀態：";
+            this._newEmplPositionIDLB.AutoSize = true;
+            this._newEmplPositionIDLB.Location = new System.Drawing.Point(48, 628);
+            this._newEmplPositionIDLB.Name = "_newEmplPositionIDLB";
+            this._newEmplPositionIDLB.Size = new System.Drawing.Size(89, 24);
+            this._newEmplPositionIDLB.TabIndex = 15;
+            this._newEmplPositionIDLB.Text = "Position:";
             // 
-            // _emerPhoneTextBox
+            // _newEmplDeptIDLB
             // 
-            this._emerPhoneTextBox.Location = new System.Drawing.Point(525, 104);
-            this._emerPhoneTextBox.MaxLength = 10;
-            this._emerPhoneTextBox.Name = "_emerPhoneTextBox";
-            this._emerPhoneTextBox.Size = new System.Drawing.Size(100, 22);
-            this._emerPhoneTextBox.TabIndex = 10;
-            this._emerPhoneTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPressNumberOnlyTextBox);
+            this._newEmplDeptIDLB.AutoSize = true;
+            this._newEmplDeptIDLB.Location = new System.Drawing.Point(48, 562);
+            this._newEmplDeptIDLB.Name = "_newEmplDeptIDLB";
+            this._newEmplDeptIDLB.Size = new System.Drawing.Size(122, 24);
+            this._newEmplDeptIDLB.TabIndex = 14;
+            this._newEmplDeptIDLB.Text = "Department:";
             // 
-            // label7
+            // _newEmplBasicSalaryLB
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label7.Location = new System.Drawing.Point(382, 106);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(137, 20);
-            this.label7.TabIndex = 12;
-            this.label7.Text = "緊急聯絡人電話：";
+            this._newEmplBasicSalaryLB.AutoSize = true;
+            this._newEmplBasicSalaryLB.Location = new System.Drawing.Point(48, 700);
+            this._newEmplBasicSalaryLB.Name = "_newEmplBasicSalaryLB";
+            this._newEmplBasicSalaryLB.Size = new System.Drawing.Size(130, 24);
+            this._newEmplBasicSalaryLB.TabIndex = 13;
+            this._newEmplBasicSalaryLB.Text = "Basic Salary:";
             // 
-            // _emerPersonTextBox
+            // _newEmplBirthLB
             // 
-            this._emerPersonTextBox.Location = new System.Drawing.Point(525, 59);
-            this._emerPersonTextBox.MaxLength = 10;
-            this._emerPersonTextBox.Name = "_emerPersonTextBox";
-            this._emerPersonTextBox.Size = new System.Drawing.Size(100, 22);
-            this._emerPersonTextBox.TabIndex = 9;
+            this._newEmplBirthLB.AutoSize = true;
+            this._newEmplBirthLB.Location = new System.Drawing.Point(670, 40);
+            this._newEmplBirthLB.Name = "_newEmplBirthLB";
+            this._newEmplBirthLB.Size = new System.Drawing.Size(105, 24);
+            this._newEmplBirthLB.TabIndex = 12;
+            this._newEmplBirthLB.Text = "Birth Day:";
             // 
-            // label6
+            // _newEmplSpouseLB
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label6.Location = new System.Drawing.Point(414, 61);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(105, 20);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "緊急聯絡人：";
+            this._newEmplSpouseLB.AutoSize = true;
+            this._newEmplSpouseLB.Location = new System.Drawing.Point(670, 489);
+            this._newEmplSpouseLB.Name = "_newEmplSpouseLB";
+            this._newEmplSpouseLB.Size = new System.Drawing.Size(81, 24);
+            this._newEmplSpouseLB.TabIndex = 11;
+            this._newEmplSpouseLB.Text = "Spouse:";
             // 
-            // _addrTextBox
+            // _newEmplMarriedStatLB
             // 
-            this._addrTextBox.Location = new System.Drawing.Point(228, 379);
-            this._addrTextBox.Name = "_addrTextBox";
-            this._addrTextBox.Size = new System.Drawing.Size(100, 22);
-            this._addrTextBox.TabIndex = 8;
+            this._newEmplMarriedStatLB.AutoSize = true;
+            this._newEmplMarriedStatLB.Location = new System.Drawing.Point(670, 417);
+            this._newEmplMarriedStatLB.Name = "_newEmplMarriedStatLB";
+            this._newEmplMarriedStatLB.Size = new System.Drawing.Size(150, 24);
+            this._newEmplMarriedStatLB.TabIndex = 10;
+            this._newEmplMarriedStatLB.Text = "Married Status:";
             // 
-            // label5
+            // _newEmplJobStatLB
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label5.Location = new System.Drawing.Point(165, 381);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(57, 20);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "住址：";
+            this._newEmplJobStatLB.AutoSize = true;
+            this._newEmplJobStatLB.Location = new System.Drawing.Point(48, 489);
+            this._newEmplJobStatLB.Name = "_newEmplJobStatLB";
+            this._newEmplJobStatLB.Size = new System.Drawing.Size(108, 24);
+            this._newEmplJobStatLB.TabIndex = 9;
+            this._newEmplJobStatLB.Text = "Job Status:";
             // 
-            // label4
+            // _newEmplMilitaryLB
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label4.Location = new System.Drawing.Point(165, 201);
-            this.label4.Name = "label4";
-            this.label4.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label4.Size = new System.Drawing.Size(57, 20);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "性別：";
+            this._newEmplMilitaryLB.AutoSize = true;
+            this._newEmplMilitaryLB.Location = new System.Drawing.Point(670, 328);
+            this._newEmplMilitaryLB.Name = "_newEmplMilitaryLB";
+            this._newEmplMilitaryLB.Size = new System.Drawing.Size(150, 24);
+            this._newEmplMilitaryLB.TabIndex = 8;
+            this._newEmplMilitaryLB.Text = "Military Status:";
             // 
-            // _ssnTextBox
+            // _newEmplEmerPhoneLB
             // 
-            this._ssnTextBox.Location = new System.Drawing.Point(228, 154);
-            this._ssnTextBox.MaxLength = 10;
-            this._ssnTextBox.Name = "_ssnTextBox";
-            this._ssnTextBox.Size = new System.Drawing.Size(100, 22);
-            this._ssnTextBox.TabIndex = 3;
+            this._newEmplEmerPhoneLB.AutoSize = true;
+            this._newEmplEmerPhoneLB.Location = new System.Drawing.Point(48, 417);
+            this._newEmplEmerPhoneLB.Name = "_newEmplEmerPhoneLB";
+            this._newEmplEmerPhoneLB.Size = new System.Drawing.Size(181, 24);
+            this._newEmplEmerPhoneLB.TabIndex = 7;
+            this._newEmplEmerPhoneLB.Text = "Emergency Phone:";
             // 
-            // label3
+            // _newEmplEmerPersonLB
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label3.Location = new System.Drawing.Point(117, 156);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(105, 20);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "身分證字號：";
+            this._newEmplEmerPersonLB.AutoSize = true;
+            this._newEmplEmerPersonLB.Location = new System.Drawing.Point(48, 338);
+            this._newEmplEmerPersonLB.Name = "_newEmplEmerPersonLB";
+            this._newEmplEmerPersonLB.Size = new System.Drawing.Size(187, 24);
+            this._newEmplEmerPersonLB.TabIndex = 6;
+            this._newEmplEmerPersonLB.Text = "Emergency Person:";
             // 
-            // _emplNameTextBox
+            // _newEmplAddrLB
             // 
-            this._emplNameTextBox.Location = new System.Drawing.Point(228, 109);
-            this._emplNameTextBox.MaxLength = 10;
-            this._emplNameTextBox.Name = "_emplNameTextBox";
-            this._emplNameTextBox.Size = new System.Drawing.Size(100, 22);
-            this._emplNameTextBox.TabIndex = 2;
+            this._newEmplAddrLB.AutoSize = true;
+            this._newEmplAddrLB.Location = new System.Drawing.Point(48, 262);
+            this._newEmplAddrLB.Name = "_newEmplAddrLB";
+            this._newEmplAddrLB.Size = new System.Drawing.Size(90, 24);
+            this._newEmplAddrLB.TabIndex = 5;
+            this._newEmplAddrLB.Text = "Address:";
             // 
-            // label2
+            // _newEmplPhoneLB
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label2.Location = new System.Drawing.Point(165, 111);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 20);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "姓名：";
+            this._newEmplPhoneLB.AutoSize = true;
+            this._newEmplPhoneLB.Location = new System.Drawing.Point(670, 189);
+            this._newEmplPhoneLB.Name = "_newEmplPhoneLB";
+            this._newEmplPhoneLB.Size = new System.Drawing.Size(152, 24);
+            this._newEmplPhoneLB.TabIndex = 4;
+            this._newEmplPhoneLB.Text = "Phone Number:";
             // 
-            // _emplIdTextBox
+            // _newEmplSexLB
             // 
-            this._emplIdTextBox.Location = new System.Drawing.Point(228, 64);
-            this._emplIdTextBox.Name = "_emplIdTextBox";
-            this._emplIdTextBox.Size = new System.Drawing.Size(100, 22);
-            this._emplIdTextBox.TabIndex = 1;
+            this._newEmplSexLB.AutoSize = true;
+            this._newEmplSexLB.Location = new System.Drawing.Point(670, 108);
+            this._newEmplSexLB.Name = "_newEmplSexLB";
+            this._newEmplSexLB.Size = new System.Drawing.Size(50, 24);
+            this._newEmplSexLB.TabIndex = 3;
+            this._newEmplSexLB.Text = "Sex:";
             // 
-            // label1
+            // _newEmplSsnLB
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label1.Location = new System.Drawing.Point(133, 66);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "員工編號：";
+            this._newEmplSsnLB.AutoSize = true;
+            this._newEmplSsnLB.Location = new System.Drawing.Point(48, 194);
+            this._newEmplSsnLB.Name = "_newEmplSsnLB";
+            this._newEmplSsnLB.Size = new System.Drawing.Size(49, 24);
+            this._newEmplSsnLB.TabIndex = 2;
+            this._newEmplSsnLB.Text = "Ssn:";
+            // 
+            // _newEmplNameLB
+            // 
+            this._newEmplNameLB.AutoSize = true;
+            this._newEmplNameLB.Location = new System.Drawing.Point(48, 117);
+            this._newEmplNameLB.Name = "_newEmplNameLB";
+            this._newEmplNameLB.Size = new System.Drawing.Size(70, 24);
+            this._newEmplNameLB.TabIndex = 1;
+            this._newEmplNameLB.Text = "Name:";
+            // 
+            // _newEmplIDLB
+            // 
+            this._newEmplIDLB.AutoSize = true;
+            this._newEmplIDLB.Location = new System.Drawing.Point(48, 40);
+            this._newEmplIDLB.Name = "_newEmplIDLB";
+            this._newEmplIDLB.Size = new System.Drawing.Size(137, 24);
+            this._newEmplIDLB.TabIndex = 0;
+            this._newEmplIDLB.Text = "Employee ID:";
+            // 
+            // _editEmployee
+            // 
+            this._editEmployee.Controls.Add(this._searchEmplButtom);
+            this._editEmployee.Controls.Add(this._editEmplPositionCB);
+            this._editEmployee.Controls.Add(this._editEmplSexCB);
+            this._editEmployee.Controls.Add(this._editEmplButton);
+            this._editEmployee.Controls.Add(this._editEmplBloodCB);
+            this._editEmployee.Controls.Add(this._editEmplBloodLB);
+            this._editEmployee.Controls.Add(this._editEmplDeptCB);
+            this._editEmployee.Controls.Add(this._editEmplBasicSalaryTB);
+            this._editEmployee.Controls.Add(this._editEmplJobStatCB);
+            this._editEmployee.Controls.Add(this._editEmplSpouseTB);
+            this._editEmployee.Controls.Add(this._editEmplMarriedStatCB);
+            this._editEmployee.Controls.Add(this._editEmplMilitaryStatCB);
+            this._editEmployee.Controls.Add(this._editEmplEmerPhoneTB);
+            this._editEmployee.Controls.Add(this._editEmplEmerPersonTB);
+            this._editEmployee.Controls.Add(this._editEmplAddrTB);
+            this._editEmployee.Controls.Add(this._editEmplPhoneTB);
+            this._editEmployee.Controls.Add(this._editEmplSsnTB);
+            this._editEmployee.Controls.Add(this._editEmplBirthDTP);
+            this._editEmployee.Controls.Add(this._editEmplNameTB);
+            this._editEmployee.Controls.Add(this._editEmplIDTB);
+            this._editEmployee.Controls.Add(this._editEmplPositionLB);
+            this._editEmployee.Controls.Add(this._editEmplDeptLB);
+            this._editEmployee.Controls.Add(this._editEmplBasicSalaryLB);
+            this._editEmployee.Controls.Add(this._editEmplBirthLB);
+            this._editEmployee.Controls.Add(this._editEmplSpouseLB);
+            this._editEmployee.Controls.Add(this._editMarriedStatLB);
+            this._editEmployee.Controls.Add(this._editEmplJobStatLB);
+            this._editEmployee.Controls.Add(this._editEmplMilitaryStatLB);
+            this._editEmployee.Controls.Add(this._editEmplEmerPhone);
+            this._editEmployee.Controls.Add(this._editEmplEmerPersonLB);
+            this._editEmployee.Controls.Add(this._editEmplAddrLB);
+            this._editEmployee.Controls.Add(this._editEmplPhoneLB);
+            this._editEmployee.Controls.Add(this._editEmplSexLB);
+            this._editEmployee.Controls.Add(this._editEmplSsnLB);
+            this._editEmployee.Controls.Add(this._editEmplNameLB);
+            this._editEmployee.Controls.Add(this.editEmplIDLB);
+            this._editEmployee.Location = new System.Drawing.Point(4, 34);
+            this._editEmployee.Name = "_editEmployee";
+            this._editEmployee.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this._editEmployee.Size = new System.Drawing.Size(1537, 822);
+            this._editEmployee.TabIndex = 1;
+            this._editEmployee.Text = "Edit";
+            this._editEmployee.UseVisualStyleBackColor = true;
             // 
             // _workAttendance
             // 
-            this._workAttendance.Location = new System.Drawing.Point(4, 26);
-            this._workAttendance.Margin = new System.Windows.Forms.Padding(2);
+            this._workAttendance.Location = new System.Drawing.Point(4, 34);
             this._workAttendance.Name = "_workAttendance";
-            this._workAttendance.Padding = new System.Windows.Forms.Padding(2);
-            this._workAttendance.Size = new System.Drawing.Size(758, 559);
+            this._workAttendance.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this._workAttendance.Size = new System.Drawing.Size(1558, 872);
             this._workAttendance.TabIndex = 1;
-            this._workAttendance.Text = "WorkAttendance";
+            this._workAttendance.Text = "Work Attendance";
             this._workAttendance.UseVisualStyleBackColor = true;
             // 
             // _reimburse
             // 
-            this._reimburse.Location = new System.Drawing.Point(4, 26);
-            this._reimburse.Margin = new System.Windows.Forms.Padding(2);
+            this._reimburse.Location = new System.Drawing.Point(4, 34);
             this._reimburse.Name = "_reimburse";
-            this._reimburse.Padding = new System.Windows.Forms.Padding(2);
-            this._reimburse.Size = new System.Drawing.Size(758, 559);
+            this._reimburse.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this._reimburse.Size = new System.Drawing.Size(1558, 872);
             this._reimburse.TabIndex = 2;
             this._reimburse.Text = "Reimburse";
             this._reimburse.UseVisualStyleBackColor = true;
             // 
             // _bonus
             // 
-            this._bonus.Location = new System.Drawing.Point(4, 26);
-            this._bonus.Margin = new System.Windows.Forms.Padding(2);
+            this._bonus.Location = new System.Drawing.Point(4, 34);
             this._bonus.Name = "_bonus";
-            this._bonus.Padding = new System.Windows.Forms.Padding(2);
-            this._bonus.Size = new System.Drawing.Size(758, 559);
+            this._bonus.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this._bonus.Size = new System.Drawing.Size(1558, 872);
             this._bonus.TabIndex = 3;
             this._bonus.Text = "Bonus";
             this._bonus.UseVisualStyleBackColor = true;
             // 
             // _salary
             // 
-            this._salary.Location = new System.Drawing.Point(4, 26);
-            this._salary.Margin = new System.Windows.Forms.Padding(2);
+            this._salary.Location = new System.Drawing.Point(4, 34);
             this._salary.Name = "_salary";
-            this._salary.Padding = new System.Windows.Forms.Padding(2);
-            this._salary.Size = new System.Drawing.Size(758, 559);
+            this._salary.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this._salary.Size = new System.Drawing.Size(1558, 872);
             this._salary.TabIndex = 4;
             this._salary.Text = "Salary";
             this._salary.UseVisualStyleBackColor = true;
             // 
             // _traning
             // 
-            this._traning.Location = new System.Drawing.Point(4, 26);
-            this._traning.Margin = new System.Windows.Forms.Padding(2);
+            this._traning.Location = new System.Drawing.Point(4, 34);
             this._traning.Name = "_traning";
-            this._traning.Padding = new System.Windows.Forms.Padding(2);
-            this._traning.Size = new System.Drawing.Size(758, 559);
+            this._traning.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this._traning.Size = new System.Drawing.Size(1558, 872);
             this._traning.TabIndex = 5;
             this._traning.Text = "Traning";
             this._traning.UseVisualStyleBackColor = true;
             // 
             // _careerPlanning
             // 
-            this._careerPlanning.Location = new System.Drawing.Point(4, 26);
-            this._careerPlanning.Margin = new System.Windows.Forms.Padding(2);
+            this._careerPlanning.Location = new System.Drawing.Point(4, 34);
             this._careerPlanning.Name = "_careerPlanning";
-            this._careerPlanning.Padding = new System.Windows.Forms.Padding(2);
-            this._careerPlanning.Size = new System.Drawing.Size(758, 559);
+            this._careerPlanning.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this._careerPlanning.Size = new System.Drawing.Size(1558, 872);
             this._careerPlanning.TabIndex = 6;
-            this._careerPlanning.Text = "CareerPlainning";
+            this._careerPlanning.Text = "Career Plainning";
             this._careerPlanning.UseVisualStyleBackColor = true;
             // 
             // _report
             // 
-            this._report.Location = new System.Drawing.Point(4, 26);
-            this._report.Margin = new System.Windows.Forms.Padding(2);
+            this._report.Location = new System.Drawing.Point(4, 34);
             this._report.Name = "_report";
-            this._report.Padding = new System.Windows.Forms.Padding(2);
-            this._report.Size = new System.Drawing.Size(758, 559);
+            this._report.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this._report.Size = new System.Drawing.Size(1558, 872);
             this._report.TabIndex = 7;
             this._report.Text = "Report";
             this._report.UseVisualStyleBackColor = true;
             // 
             // _authorization
             // 
-            this._authorization.Location = new System.Drawing.Point(4, 26);
-            this._authorization.Margin = new System.Windows.Forms.Padding(2);
+            this._authorization.Location = new System.Drawing.Point(4, 34);
             this._authorization.Name = "_authorization";
-            this._authorization.Padding = new System.Windows.Forms.Padding(2);
-            this._authorization.Size = new System.Drawing.Size(758, 559);
+            this._authorization.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this._authorization.Size = new System.Drawing.Size(1558, 872);
             this._authorization.TabIndex = 8;
             this._authorization.Text = "Authorization";
             this._authorization.UseVisualStyleBackColor = true;
             // 
-            // menuStrip1
+            // _logoutButton
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.flieToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(766, 24);
-            this.menuStrip1.TabIndex = 2;
-            this.menuStrip1.Text = "menuStrip1";
+            this._logoutButton.Location = new System.Drawing.Point(1318, 14);
+            this._logoutButton.Name = "_logoutButton";
+            this._logoutButton.Size = new System.Drawing.Size(75, 28);
+            this._logoutButton.TabIndex = 1;
+            this._logoutButton.Text = "Logout";
+            this._logoutButton.UseVisualStyleBackColor = true;
+            this._logoutButton.Click += new System.EventHandler(this.ClickLogoutButton);
             // 
-            // flieToolStripMenuItem
+            // departmentTableAdapter
             // 
-            this.flieToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.logoutToolStripMenuItem});
-            this.flieToolStripMenuItem.Name = "flieToolStripMenuItem";
-            this.flieToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
-            this.flieToolStripMenuItem.Text = "Flie";
+            this.departmentTableAdapter.ClearBeforeFill = true;
             // 
-            // logoutToolStripMenuItem
+            // positionTableAdapter
             // 
-            this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
-            this.logoutToolStripMenuItem.Text = "Logout";
-            this.logoutToolStripMenuItem.Click += new System.EventHandler(this.ClickLogoutToolStripMenuItem);
+            this.positionTableAdapter.ClearBeforeFill = true;
             // 
-            // _jobStateComboBox
+            // _editEmplPositionCB
             // 
-            this._jobStateComboBox.FormattingEnabled = true;
-            this._jobStateComboBox.Items.AddRange(new object[] {
+            this._editEmplPositionCB.DataSource = this.positionBindingSource;
+            this._editEmplPositionCB.DisplayMember = "positionName";
+            this._editEmplPositionCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this._editEmplPositionCB.Enabled = false;
+            this._editEmplPositionCB.FormattingEnabled = true;
+            this._editEmplPositionCB.Location = new System.Drawing.Point(150, 632);
+            this._editEmplPositionCB.Name = "_editEmplPositionCB";
+            this._editEmplPositionCB.Size = new System.Drawing.Size(308, 32);
+            this._editEmplPositionCB.TabIndex = 74;
+            this._editEmplPositionCB.ValueMember = "positionID";
+            this._editEmplPositionCB.SelectedIndexChanged += new System.EventHandler(this.ChangedEditEmplPositionCBSelectedIndex);
+            // 
+            // _editEmplSexCB
+            // 
+            this._editEmplSexCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this._editEmplSexCB.Enabled = false;
+            this._editEmplSexCB.FormattingEnabled = true;
+            this._editEmplSexCB.Items.AddRange(new object[] {
+            "Male",
+            "Female"});
+            this._editEmplSexCB.Location = new System.Drawing.Point(730, 108);
+            this._editEmplSexCB.Name = "_editEmplSexCB";
+            this._editEmplSexCB.Size = new System.Drawing.Size(121, 32);
+            this._editEmplSexCB.TabIndex = 73;
+            // 
+            // _editEmplButton
+            // 
+            this._editEmplButton.Enabled = false;
+            this._editEmplButton.Location = new System.Drawing.Point(1224, 726);
+            this._editEmplButton.Name = "_editEmplButton";
+            this._editEmplButton.Size = new System.Drawing.Size(112, 52);
+            this._editEmplButton.TabIndex = 72;
+            this._editEmplButton.Text = "Edit";
+            this._editEmplButton.UseVisualStyleBackColor = true;
+            this._editEmplButton.Click += new System.EventHandler(this.ClickEditEmplButtom);
+            // 
+            // _editEmplBloodCB
+            // 
+            this._editEmplBloodCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this._editEmplBloodCB.Enabled = false;
+            this._editEmplBloodCB.FormattingEnabled = true;
+            this._editEmplBloodCB.Items.AddRange(new object[] {
+            "A",
+            "B",
+            "O",
+            "AB"});
+            this._editEmplBloodCB.Location = new System.Drawing.Point(955, 108);
+            this._editEmplBloodCB.Name = "_editEmplBloodCB";
+            this._editEmplBloodCB.Size = new System.Drawing.Size(114, 32);
+            this._editEmplBloodCB.TabIndex = 71;
+            // 
+            // _editEmplBloodLB
+            // 
+            this._editEmplBloodLB.AutoSize = true;
+            this._editEmplBloodLB.Location = new System.Drawing.Point(878, 116);
+            this._editEmplBloodLB.Name = "_editEmplBloodLB";
+            this._editEmplBloodLB.Size = new System.Drawing.Size(70, 24);
+            this._editEmplBloodLB.TabIndex = 70;
+            this._editEmplBloodLB.Text = "Blood:";
+            // 
+            // _editEmplDeptCB
+            // 
+            this._editEmplDeptCB.DataSource = this.departmentBindingSource;
+            this._editEmplDeptCB.DisplayMember = "departmentName";
+            this._editEmplDeptCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this._editEmplDeptCB.Enabled = false;
+            this._editEmplDeptCB.FormattingEnabled = true;
+            this._editEmplDeptCB.Location = new System.Drawing.Point(186, 566);
+            this._editEmplDeptCB.Name = "_editEmplDeptCB";
+            this._editEmplDeptCB.Size = new System.Drawing.Size(308, 32);
+            this._editEmplDeptCB.TabIndex = 69;
+            this._editEmplDeptCB.ValueMember = "departmentID";
+            // 
+            // _editEmplBasicSalaryTB
+            // 
+            this._editEmplBasicSalaryTB.Location = new System.Drawing.Point(188, 702);
+            this._editEmplBasicSalaryTB.Name = "_editEmplBasicSalaryTB";
+            this._editEmplBasicSalaryTB.ReadOnly = true;
+            this._editEmplBasicSalaryTB.Size = new System.Drawing.Size(300, 36);
+            this._editEmplBasicSalaryTB.TabIndex = 68;
+            this._editEmplBasicSalaryTB.Text = "0";
+            // 
+            // _editEmplJobStatCB
+            // 
+            this._editEmplJobStatCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this._editEmplJobStatCB.Enabled = false;
+            this._editEmplJobStatCB.FormattingEnabled = true;
+            this._editEmplJobStatCB.Items.AddRange(new object[] {
             "在職",
-            "復職",
-            "留職停薪",
-            "停職",
             "離職"});
-            this._jobStateComboBox.Location = new System.Drawing.Point(525, 199);
-            this._jobStateComboBox.Name = "_jobStateComboBox";
-            this._jobStateComboBox.Size = new System.Drawing.Size(75, 20);
-            this._jobStateComboBox.TabIndex = 12;
-            this._jobStateComboBox.Text = "在職";
+            this._editEmplJobStatCB.Location = new System.Drawing.Point(168, 494);
+            this._editEmplJobStatCB.Name = "_editEmplJobStatCB";
+            this._editEmplJobStatCB.Size = new System.Drawing.Size(320, 32);
+            this._editEmplJobStatCB.TabIndex = 67;
+            // 
+            // _editEmplSpouseTB
+            // 
+            this._editEmplSpouseTB.Location = new System.Drawing.Point(762, 485);
+            this._editEmplSpouseTB.Name = "_editEmplSpouseTB";
+            this._editEmplSpouseTB.ReadOnly = true;
+            this._editEmplSpouseTB.Size = new System.Drawing.Size(223, 36);
+            this._editEmplSpouseTB.TabIndex = 66;
+            // 
+            // _editEmplMarriedStatCB
+            // 
+            this._editEmplMarriedStatCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this._editEmplMarriedStatCB.Enabled = false;
+            this._editEmplMarriedStatCB.FormattingEnabled = true;
+            this._editEmplMarriedStatCB.Items.AddRange(new object[] {
+            "未婚",
+            "已婚"});
+            this._editEmplMarriedStatCB.Location = new System.Drawing.Point(832, 418);
+            this._editEmplMarriedStatCB.Name = "_editEmplMarriedStatCB";
+            this._editEmplMarriedStatCB.Size = new System.Drawing.Size(152, 32);
+            this._editEmplMarriedStatCB.TabIndex = 65;
+            this._editEmplMarriedStatCB.SelectedIndexChanged += new System.EventHandler(this.ChangedEditEmplMarriedStatCBSelectedIndex);
+            // 
+            // _editEmplMilitaryStatCB
+            // 
+            this._editEmplMilitaryStatCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this._editEmplMilitaryStatCB.Enabled = false;
+            this._editEmplMilitaryStatCB.FormattingEnabled = true;
+            this._editEmplMilitaryStatCB.Items.AddRange(new object[] {
+            "役畢",
+            "屆退",
+            "待役",
+            "未役",
+            "免役"});
+            this._editEmplMilitaryStatCB.Location = new System.Drawing.Point(832, 328);
+            this._editEmplMilitaryStatCB.Name = "_editEmplMilitaryStatCB";
+            this._editEmplMilitaryStatCB.Size = new System.Drawing.Size(152, 32);
+            this._editEmplMilitaryStatCB.TabIndex = 64;
+            // 
+            // _editEmplEmerPhoneTB
+            // 
+            this._editEmplEmerPhoneTB.Location = new System.Drawing.Point(240, 413);
+            this._editEmplEmerPhoneTB.Name = "_editEmplEmerPhoneTB";
+            this._editEmplEmerPhoneTB.ReadOnly = true;
+            this._editEmplEmerPhoneTB.Size = new System.Drawing.Size(248, 36);
+            this._editEmplEmerPhoneTB.TabIndex = 63;
+            // 
+            // _editEmplEmerPersonTB
+            // 
+            this._editEmplEmerPersonTB.Location = new System.Drawing.Point(244, 334);
+            this._editEmplEmerPersonTB.Name = "_editEmplEmerPersonTB";
+            this._editEmplEmerPersonTB.ReadOnly = true;
+            this._editEmplEmerPersonTB.Size = new System.Drawing.Size(244, 36);
+            this._editEmplEmerPersonTB.TabIndex = 62;
+            // 
+            // _editEmplAddrTB
+            // 
+            this._editEmplAddrTB.Location = new System.Drawing.Point(150, 258);
+            this._editEmplAddrTB.Name = "_editEmplAddrTB";
+            this._editEmplAddrTB.ReadOnly = true;
+            this._editEmplAddrTB.Size = new System.Drawing.Size(1018, 36);
+            this._editEmplAddrTB.TabIndex = 61;
+            // 
+            // _editEmplPhoneTB
+            // 
+            this._editEmplPhoneTB.Location = new System.Drawing.Point(832, 190);
+            this._editEmplPhoneTB.Name = "_editEmplPhoneTB";
+            this._editEmplPhoneTB.ReadOnly = true;
+            this._editEmplPhoneTB.Size = new System.Drawing.Size(336, 36);
+            this._editEmplPhoneTB.TabIndex = 60;
+            // 
+            // _editEmplSsnTB
+            // 
+            this._editEmplSsnTB.Location = new System.Drawing.Point(108, 185);
+            this._editEmplSsnTB.Name = "_editEmplSsnTB";
+            this._editEmplSsnTB.ReadOnly = true;
+            this._editEmplSsnTB.Size = new System.Drawing.Size(382, 36);
+            this._editEmplSsnTB.TabIndex = 59;
+            // 
+            // _editEmplBirthDTP
+            // 
+            this._editEmplBirthDTP.Enabled = false;
+            this._editEmplBirthDTP.Location = new System.Drawing.Point(786, 36);
+            this._editEmplBirthDTP.Name = "_editEmplBirthDTP";
+            this._editEmplBirthDTP.Size = new System.Drawing.Size(200, 36);
+            this._editEmplBirthDTP.TabIndex = 58;
+            // 
+            // _editEmplNameTB
+            // 
+            this._editEmplNameTB.Location = new System.Drawing.Point(128, 113);
+            this._editEmplNameTB.Name = "_editEmplNameTB";
+            this._editEmplNameTB.ReadOnly = true;
+            this._editEmplNameTB.Size = new System.Drawing.Size(360, 36);
+            this._editEmplNameTB.TabIndex = 57;
+            // 
+            // _editEmplIDTB
+            // 
+            this._editEmplIDTB.Location = new System.Drawing.Point(194, 36);
+            this._editEmplIDTB.Name = "_editEmplIDTB";
+            this._editEmplIDTB.Size = new System.Drawing.Size(294, 36);
+            this._editEmplIDTB.TabIndex = 56;
+            // 
+            // _editEmplPositionLB
+            // 
+            this._editEmplPositionLB.AutoSize = true;
+            this._editEmplPositionLB.Location = new System.Drawing.Point(52, 636);
+            this._editEmplPositionLB.Name = "_editEmplPositionLB";
+            this._editEmplPositionLB.Size = new System.Drawing.Size(89, 24);
+            this._editEmplPositionLB.TabIndex = 55;
+            this._editEmplPositionLB.Text = "Position:";
+            // 
+            // _editEmplDeptLB
+            // 
+            this._editEmplDeptLB.AutoSize = true;
+            this._editEmplDeptLB.Location = new System.Drawing.Point(52, 570);
+            this._editEmplDeptLB.Name = "_editEmplDeptLB";
+            this._editEmplDeptLB.Size = new System.Drawing.Size(122, 24);
+            this._editEmplDeptLB.TabIndex = 54;
+            this._editEmplDeptLB.Text = "Department:";
+            // 
+            // _editEmplBasicSalaryLB
+            // 
+            this._editEmplBasicSalaryLB.AutoSize = true;
+            this._editEmplBasicSalaryLB.Location = new System.Drawing.Point(52, 708);
+            this._editEmplBasicSalaryLB.Name = "_editEmplBasicSalaryLB";
+            this._editEmplBasicSalaryLB.Size = new System.Drawing.Size(130, 24);
+            this._editEmplBasicSalaryLB.TabIndex = 53;
+            this._editEmplBasicSalaryLB.Text = "Basic Salary:";
+            // 
+            // _editEmplBirthLB
+            // 
+            this._editEmplBirthLB.AutoSize = true;
+            this._editEmplBirthLB.Location = new System.Drawing.Point(674, 48);
+            this._editEmplBirthLB.Name = "_editEmplBirthLB";
+            this._editEmplBirthLB.Size = new System.Drawing.Size(105, 24);
+            this._editEmplBirthLB.TabIndex = 52;
+            this._editEmplBirthLB.Text = "Birth Day:";
+            // 
+            // _editEmplSpouseLB
+            // 
+            this._editEmplSpouseLB.AutoSize = true;
+            this._editEmplSpouseLB.Location = new System.Drawing.Point(674, 497);
+            this._editEmplSpouseLB.Name = "_editEmplSpouseLB";
+            this._editEmplSpouseLB.Size = new System.Drawing.Size(81, 24);
+            this._editEmplSpouseLB.TabIndex = 51;
+            this._editEmplSpouseLB.Text = "Spouse:";
+            // 
+            // _editMarriedStatLB
+            // 
+            this._editMarriedStatLB.AutoSize = true;
+            this._editMarriedStatLB.Location = new System.Drawing.Point(674, 425);
+            this._editMarriedStatLB.Name = "_editMarriedStatLB";
+            this._editMarriedStatLB.Size = new System.Drawing.Size(150, 24);
+            this._editMarriedStatLB.TabIndex = 50;
+            this._editMarriedStatLB.Text = "Married Status:";
+            // 
+            // _editEmplJobStatLB
+            // 
+            this._editEmplJobStatLB.AutoSize = true;
+            this._editEmplJobStatLB.Location = new System.Drawing.Point(52, 497);
+            this._editEmplJobStatLB.Name = "_editEmplJobStatLB";
+            this._editEmplJobStatLB.Size = new System.Drawing.Size(108, 24);
+            this._editEmplJobStatLB.TabIndex = 49;
+            this._editEmplJobStatLB.Text = "Job Status:";
+            // 
+            // _editEmplMilitaryStatLB
+            // 
+            this._editEmplMilitaryStatLB.AutoSize = true;
+            this._editEmplMilitaryStatLB.Location = new System.Drawing.Point(674, 336);
+            this._editEmplMilitaryStatLB.Name = "_editEmplMilitaryStatLB";
+            this._editEmplMilitaryStatLB.Size = new System.Drawing.Size(150, 24);
+            this._editEmplMilitaryStatLB.TabIndex = 48;
+            this._editEmplMilitaryStatLB.Text = "Military Status:";
+            // 
+            // _editEmplEmerPhone
+            // 
+            this._editEmplEmerPhone.AutoSize = true;
+            this._editEmplEmerPhone.Location = new System.Drawing.Point(52, 425);
+            this._editEmplEmerPhone.Name = "_editEmplEmerPhone";
+            this._editEmplEmerPhone.Size = new System.Drawing.Size(181, 24);
+            this._editEmplEmerPhone.TabIndex = 47;
+            this._editEmplEmerPhone.Text = "Emergency Phone:";
+            // 
+            // _editEmplEmerPersonLB
+            // 
+            this._editEmplEmerPersonLB.AutoSize = true;
+            this._editEmplEmerPersonLB.Location = new System.Drawing.Point(52, 346);
+            this._editEmplEmerPersonLB.Name = "_editEmplEmerPersonLB";
+            this._editEmplEmerPersonLB.Size = new System.Drawing.Size(187, 24);
+            this._editEmplEmerPersonLB.TabIndex = 46;
+            this._editEmplEmerPersonLB.Text = "Emergency Person:";
+            // 
+            // _editEmplAddrLB
+            // 
+            this._editEmplAddrLB.AutoSize = true;
+            this._editEmplAddrLB.Location = new System.Drawing.Point(52, 270);
+            this._editEmplAddrLB.Name = "_editEmplAddrLB";
+            this._editEmplAddrLB.Size = new System.Drawing.Size(90, 24);
+            this._editEmplAddrLB.TabIndex = 45;
+            this._editEmplAddrLB.Text = "Address:";
+            // 
+            // _editEmplPhoneLB
+            // 
+            this._editEmplPhoneLB.AutoSize = true;
+            this._editEmplPhoneLB.Location = new System.Drawing.Point(674, 197);
+            this._editEmplPhoneLB.Name = "_editEmplPhoneLB";
+            this._editEmplPhoneLB.Size = new System.Drawing.Size(152, 24);
+            this._editEmplPhoneLB.TabIndex = 44;
+            this._editEmplPhoneLB.Text = "Phone Number:";
+            // 
+            // _editEmplSexLB
+            // 
+            this._editEmplSexLB.AutoSize = true;
+            this._editEmplSexLB.Location = new System.Drawing.Point(674, 116);
+            this._editEmplSexLB.Name = "_editEmplSexLB";
+            this._editEmplSexLB.Size = new System.Drawing.Size(50, 24);
+            this._editEmplSexLB.TabIndex = 43;
+            this._editEmplSexLB.Text = "Sex:";
+            // 
+            // _editEmplSsnLB
+            // 
+            this._editEmplSsnLB.AutoSize = true;
+            this._editEmplSsnLB.Location = new System.Drawing.Point(52, 202);
+            this._editEmplSsnLB.Name = "_editEmplSsnLB";
+            this._editEmplSsnLB.Size = new System.Drawing.Size(49, 24);
+            this._editEmplSsnLB.TabIndex = 42;
+            this._editEmplSsnLB.Text = "Ssn:";
+            // 
+            // _editEmplNameLB
+            // 
+            this._editEmplNameLB.AutoSize = true;
+            this._editEmplNameLB.Location = new System.Drawing.Point(52, 125);
+            this._editEmplNameLB.Name = "_editEmplNameLB";
+            this._editEmplNameLB.Size = new System.Drawing.Size(70, 24);
+            this._editEmplNameLB.TabIndex = 41;
+            this._editEmplNameLB.Text = "Name:";
+            // 
+            // editEmplIDLB
+            // 
+            this.editEmplIDLB.AutoSize = true;
+            this.editEmplIDLB.Location = new System.Drawing.Point(52, 48);
+            this.editEmplIDLB.Name = "editEmplIDLB";
+            this.editEmplIDLB.Size = new System.Drawing.Size(137, 24);
+            this.editEmplIDLB.TabIndex = 40;
+            this.editEmplIDLB.Text = "Employee ID:";
+            // 
+            // _searchEmplButtom
+            // 
+            this._searchEmplButtom.Location = new System.Drawing.Point(1078, 726);
+            this._searchEmplButtom.Name = "_searchEmplButtom";
+            this._searchEmplButtom.Size = new System.Drawing.Size(112, 52);
+            this._searchEmplButtom.TabIndex = 75;
+            this._searchEmplButtom.Text = "Search";
+            this._searchEmplButtom.UseVisualStyleBackColor = true;
+            this._searchEmplButtom.Click += new System.EventHandler(this.ClickSearchEmplButtom);
             // 
             // _mainFunction
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(766, 613);
+            this.ClientSize = new System.Drawing.Size(1590, 934);
+            this.Controls.Add(this._logoutButton);
             this.Controls.Add(this._mainFunctionPage);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "_mainFunction";
             this.Text = "MainFunction";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CloseMainFunvrion);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CloseMainFunction);
+            this.Load += new System.EventHandler(this.LoadMainFunction);
             this._mainFunctionPage.ResumeLayout(false);
             this._employee.ResumeLayout(false);
-            this._employee.PerformLayout();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this._employeePage.ResumeLayout(false);
+            this._newEmployee.ResumeLayout(false);
+            this._newEmployee.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.positionBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.positionDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deptDataSet)).EndInit();
+            this._editEmployee.ResumeLayout(false);
+            this._editEmployee.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -642,43 +1098,86 @@
         private System.Windows.Forms.TabPage _careerPlanning;
         private System.Windows.Forms.TabPage _report;
         private System.Windows.Forms.TabPage _authorization;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem flieToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
-        private System.Windows.Forms.TextBox _emplIdTextBox;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox _positionIdTextBox;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox _deptIdTextBox;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox _basicSalaryTextBox;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox _spouseTextBox;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox _phoneTextBox;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox _emerPhoneTextBox;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox _emerPersonTextBox;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox _addrTextBox;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox _ssnTextBox;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox _emplNameTextBox;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button _addEmplDataButton;
-        private System.Windows.Forms.DateTimePicker _birthDateTimePicker;
-        private System.Windows.Forms.ComboBox _sexComboBox;
-        private System.Windows.Forms.ComboBox _bloodComboBox;
-        private System.Windows.Forms.ComboBox _marriedStateComboBox;
-        private System.Windows.Forms.ComboBox _militaryComboBox;
-        private System.Windows.Forms.ComboBox _jobStateComboBox;
+        private System.Windows.Forms.Button _logoutButton;
+        private System.Windows.Forms.TabControl _employeePage;
+        private System.Windows.Forms.TabPage _newEmployee;
+        private System.Windows.Forms.TabPage _editEmployee;
+        private System.Windows.Forms.Label _newEmplIDLB;
+        private System.Windows.Forms.Label _newEmplNameLB;
+        private System.Windows.Forms.Label _newEmplSsnLB;
+        private System.Windows.Forms.Label _newEmplSexLB;
+        private System.Windows.Forms.Label _newEmplPhoneLB;
+        private System.Windows.Forms.Label _newEmplAddrLB;
+        private System.Windows.Forms.Label _newEmplEmerPersonLB;
+        private System.Windows.Forms.Label _newEmplEmerPhoneLB;
+        private System.Windows.Forms.Label _newEmplMilitaryLB;
+        private System.Windows.Forms.Label _newEmplJobStatLB;
+        private System.Windows.Forms.Label _newEmplMarriedStatLB;
+        private System.Windows.Forms.Label _newEmplSpouseLB;
+        private System.Windows.Forms.Label _newEmplBirthLB;
+        private System.Windows.Forms.Label _newEmplBasicSalaryLB;
+        private System.Windows.Forms.Label _newEmplDeptIDLB;
+        private System.Windows.Forms.Label _newEmplPositionIDLB;
+        private System.Windows.Forms.TextBox _newEmplIDTB;
+        private System.Windows.Forms.TextBox _newEmplNameTB;
+        private System.Windows.Forms.DateTimePicker _newEmplBirthDP;
+        private System.Windows.Forms.TextBox _newEmpllSsnTB;
+        private System.Windows.Forms.TextBox _newEmplPhoneTB;
+        private System.Windows.Forms.TextBox _newEmplAddrTB;
+        private System.Windows.Forms.TextBox _newEmplEmerPhoneTB;
+        private System.Windows.Forms.TextBox _newEmplEmerPersonTB;
+        private System.Windows.Forms.ComboBox _newEmplMilitaryStatCB;
+        private System.Windows.Forms.ComboBox _newEmplMarriedStatCB;
+        private System.Windows.Forms.TextBox _newEmplSpouseTB;
+        private System.Windows.Forms.ComboBox _newEmplJobStatCB;
+        private System.Windows.Forms.TextBox _newEmplBasicSalaryTB;
+        private System.Windows.Forms.ComboBox _newEmplDeptCB;
+        private System.Windows.Forms.Label _newEmplBloodLB;
+        private System.Windows.Forms.ComboBox _newEmplBloodCB;
+        private System.Windows.Forms.Button _insertEmplButton;
+        private System.Windows.Forms.ComboBox _newEmplSexCB;
+        private deptDataSet deptDataSet;
+        private System.Windows.Forms.BindingSource departmentBindingSource;
+        private deptDataSetTableAdapters.departmentTableAdapter departmentTableAdapter;
+        private positionDataSet positionDataSet;
+        private System.Windows.Forms.BindingSource positionBindingSource;
+        private positionDataSetTableAdapters.positionTableAdapter positionTableAdapter;
+        private System.Windows.Forms.ComboBox _newEmplPositionCB;
+        private System.Windows.Forms.ComboBox _editEmplPositionCB;
+        private System.Windows.Forms.ComboBox _editEmplSexCB;
+        private System.Windows.Forms.Button _editEmplButton;
+        private System.Windows.Forms.ComboBox _editEmplBloodCB;
+        private System.Windows.Forms.Label _editEmplBloodLB;
+        private System.Windows.Forms.ComboBox _editEmplDeptCB;
+        private System.Windows.Forms.TextBox _editEmplBasicSalaryTB;
+        private System.Windows.Forms.ComboBox _editEmplJobStatCB;
+        private System.Windows.Forms.TextBox _editEmplSpouseTB;
+        private System.Windows.Forms.ComboBox _editEmplMarriedStatCB;
+        private System.Windows.Forms.ComboBox _editEmplMilitaryStatCB;
+        private System.Windows.Forms.TextBox _editEmplEmerPhoneTB;
+        private System.Windows.Forms.TextBox _editEmplEmerPersonTB;
+        private System.Windows.Forms.TextBox _editEmplAddrTB;
+        private System.Windows.Forms.TextBox _editEmplPhoneTB;
+        private System.Windows.Forms.TextBox _editEmplSsnTB;
+        private System.Windows.Forms.DateTimePicker _editEmplBirthDTP;
+        private System.Windows.Forms.TextBox _editEmplNameTB;
+        private System.Windows.Forms.TextBox _editEmplIDTB;
+        private System.Windows.Forms.Label _editEmplPositionLB;
+        private System.Windows.Forms.Label _editEmplDeptLB;
+        private System.Windows.Forms.Label _editEmplBasicSalaryLB;
+        private System.Windows.Forms.Label _editEmplBirthLB;
+        private System.Windows.Forms.Label _editEmplSpouseLB;
+        private System.Windows.Forms.Label _editMarriedStatLB;
+        private System.Windows.Forms.Label _editEmplJobStatLB;
+        private System.Windows.Forms.Label _editEmplMilitaryStatLB;
+        private System.Windows.Forms.Label _editEmplEmerPhone;
+        private System.Windows.Forms.Label _editEmplEmerPersonLB;
+        private System.Windows.Forms.Label _editEmplAddrLB;
+        private System.Windows.Forms.Label _editEmplPhoneLB;
+        private System.Windows.Forms.Label _editEmplSexLB;
+        private System.Windows.Forms.Label _editEmplSsnLB;
+        private System.Windows.Forms.Label _editEmplNameLB;
+        private System.Windows.Forms.Label editEmplIDLB;
+        private System.Windows.Forms.Button _searchEmplButtom;
     }
 }

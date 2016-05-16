@@ -3,239 +3,223 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using OOAD_HR_System.Class;
 
 namespace OOAD_HR_System.Model
 {
-    class EmployeeModel
+    public class EmployeeModel
     {
-        private String _emplID = null;                 // 編號
-        private String _emplName = null;               // 姓名
-        private String _ssn = null;                // 身分證字號
-        private String _sex = null;                // 性別
-        private String _blood = null;              // 血型
-        private String _phone = null;              // 連絡電話
-        private String _addr = null;               // 住址
-        private String _emerPerson = null;         // 緊急聯絡人
-        private String _emerPhone = null;          // 緊急聯絡人電話
-        private String _military = null;           // 兵役狀態
-        private String _jobState = null;           // 工作狀態(在職, 離職... etc)
-        private String _marriedState = null;       // 婚姻狀態
-        private String _spouse = null;             // 配偶
-        private DateTime _birth;                   // 出生日期
-        private float _basicSalary;                // 底薪
-        private String _deptId = null;             // 所屬部門編號
-        private String _positionId = null;         // 職位編號
 
-        // ---------------------------------------------建構子---------------------------------------------
+        private EmployeeClass _employee = new EmployeeClass();
+
+        // 建構子
         public EmployeeModel()
         {
 
         }
 
-        // 以下class的get set皆會與資料庫連接此部分先寫上基本的部份
-
-        // ---------------------------------------------設置id---------------------------------------------
-        public void setId(String emplID, String newEmplID)
+        // 設置員工id
+        public void SetEmplID(String emplID)
         {
-            this._emplID = newEmplID;
+            this._employee.SetId(emplID);
         }
 
-        // ---------------------------------------------取得id---------------------------------------------
-        public String getId()
+        // 取得員工ID
+        public String GetEmplID()
         {
-            return this._emplID;
+            return this._employee.GetId();
         }
 
-        // ---------------------------------------------設置姓名---------------------------------------------
-        public void setName(String emplName)
+        // 設置員工姓名
+        public void SetName(String name)
         {
-            this._emplName = emplName;
+            this._employee.SetName(name);
         }
 
-        // ---------------------------------------------取得姓名---------------------------------------------
-        public String getName(String emplID)
+        // 取得員工姓名
+        public String GetName()
         {
-            return this._emplName;
+            return this._employee.GetName();
         }
 
-        // ---------------------------------------------設置身分證字號---------------------------------------------
-        public void setSsn(String emplID, String ssn)
+        // 設置員工身分證字號
+        public void SetSsn(String ssn)
         {
-            this._ssn = ssn;
+            this._employee.SetSsn(ssn);
         }
 
-        // ---------------------------------------------取得身分證字號---------------------------------------------
-        public String getSsn(String emplID)
+        // 取得員工身分證字號
+        public String GetSsn()
         {
-            return this._ssn;
+            return this._employee.GetSsn();
         }
 
-        // ---------------------------------------------設置性別---------------------------------------------
-        public void setSex(String emplID, String sex)
+        // 設置員工性別
+        public void SetSex(String sex)
         {
-            this._sex = sex;
+            this._employee.SetSex(sex);
         }
 
-        // ---------------------------------------------取得性別---------------------------------------------
-        public String getSex(String emplID)
+        // 取得員工性別
+        public String GetSex()
         {
-            return this._sex;
+            return this._employee.GetSex();
         }
 
-        // ---------------------------------------------設置血型---------------------------------------------
-        public void setBlood(String emplID, String blood)
+        // 設置員工血型
+        public void SetBlood(String blood)
         {
-            this._blood = blood;
+            this._employee.SetBlood(blood);
         }
 
-        // ---------------------------------------------取得血型---------------------------------------------
-        public String getBlood(String emplID)
+        // 取得員工血型
+        public String GetBlood()
         {
-            return this._blood;
+            return this._employee.GetBlood();
         }
 
-        // ---------------------------------------------取得聯絡電話---------------------------------------------
-        public void setPhone(String emplID, String phone)
+        // 設置員工連絡電話
+        public void SetPhone(String phone)
         {
-            this._phone = phone;
+            this._employee.SetPhone(phone);
         }
 
-        // ---------------------------------------------這連絡電話---------------------------------------------
-        public String getPhone(String emplID)
+        // 取得員工聯絡電話
+        public String GetPhone()
         {
-            return this._phone;
+            return this._employee.GetPhone();
         }
 
-        // ---------------------------------------------設置住址---------------------------------------------
-        public void setAddress(String emplID, String addr)
+        // 設置員工聯絡地址
+        public void SetAddress(String address)
         {
-            this._addr = addr;
+            this._employee.SetAddress(address);
         }
 
-        // ---------------------------------------------取得住址---------------------------------------------
-        public String getAddress(String emplID)
+        // 取得員工聯絡地址
+        public String GetAddress()
         {
-            return this._addr;
+            return this._employee.GetAddress();
         }
 
-        // ---------------------------------------------取得緊急聯絡人---------------------------------------------
-        public void setEmerPerson(String emplID, String emerPerson)
+        // 設置員工緊急聯絡人姓名
+        public void SetEmerPerson(String emerPerson)
         {
-            this._emerPerson = emerPerson;
+            this._employee.SetEmerPerson(emerPerson);
         }
 
-        // ---------------------------------------------設置緊急聯絡人---------------------------------------------
-        public String getEmerPerson(String emplID)
+        // 取得員工緊急聯絡人姓名
+        public String GetEmerPerson()
         {
-            return this._emerPerson;
+            return this._employee.GetEmerPerson();
         }
 
-        // ---------------------------------------------設置緊急連絡電話---------------------------------------------
-        public void setEmerPhone(String emplID, String emerPhone)
+        // 設置員工緊急聯絡電話
+        public void SetEmerPhone(String emerPhone)
         {
-            this._emerPhone = emerPhone;
+            this._employee.SetEmerPhone(emerPhone);
         }
 
-        // ---------------------------------------------取得緊急連絡電話---------------------------------------------
-        public String getEmerPhone(String emplID)
+        // 取得員工緊急聯絡電話
+        public String GetEmerPhone()
         {
-            return this._emerPhone;
+            return this._employee.GetEmerPhone();
         }
 
-        // ---------------------------------------------設置兵役狀態---------------------------------------------
-        public void setMilitary(String emplID, String military)
+        // 設置員工兵役狀態
+        public void SetMilitaryStatus(String military)
         {
-            this._military = military;
+            this._employee.SetMilitary(military);
         }
 
-        // ---------------------------------------------取得兵役狀態---------------------------------------------
-        public String getMilitary(String emplID)
+        // 取得員工兵役狀態
+        public String GetMilitaryStatus()
         {
-            return this._military;
+            return this._employee.GetMilitary();
         }
 
-        // ---------------------------------------------設置工作狀態---------------------------------------------
-        public void setJobState(String emplID, String jobState)
+        // 設置員工工作狀態
+        public void SetJobStatus(String jobStatus)
         {
-            this._jobState = jobState;
+            this._employee.SetJobState(jobStatus);
         }
 
-        // ---------------------------------------------取得工作狀態---------------------------------------------
-        public String getJobState(String emplID)
+        // 取得員工工作狀態
+        public String GetJobStatus()
         {
-            return this._jobState;
+            return this._employee.GetJobState();
         }
 
-        // ---------------------------------------------設置婚姻狀態---------------------------------------------
-        public void setMarriedState(String emplID, String marriedState)
+        // 設置員工婚姻狀態
+        public void SetMarriedStatus(String marriedStatus)
         {
-            this._marriedState = marriedState;
+            this._employee.SetMarriedState(marriedStatus);
         }
 
-        // ---------------------------------------------取得婚姻狀態---------------------------------------------
-        public String getMarriedState(String emplID)
+        // 取得員工婚姻狀態
+        public String GetMarriedStatus()
         {
-            return this._marriedState;
+            return this._employee.GetMarriedState();
         }
 
-        // ---------------------------------------------設置配偶---------------------------------------------
-        public void setSpouse(String emplID, String spouse)
+        // 設置員工配偶
+        public void SetSpouse(String spouse)
         {
-            this._spouse = spouse;
+            this._employee.SetSpouse(spouse);
         }
 
-        // ---------------------------------------------取得配偶---------------------------------------------
-        public String getSpouse(String emplID)
+        // 取得員工配偶
+        public String GetSpouse()
         {
-            return this._spouse;
+            return this._employee.GetSpouse();
         }
 
-        // ---------------------------------------------設置出生日期---------------------------------------------
-        public void setBirth(String emplID, DateTime birth)
+        // 設置員工出生年月日
+        public void SetBirth(DateTime birth)
         {
-            this._birth = birth;
+            this._employee.SetBirth(birth);
         }
 
-        // ---------------------------------------------取得出生日期---------------------------------------------
-        public DateTime getBirth(String emplID)
+        // 取得員工出生年月日
+        public DateTime GetBirth()
         {
-            return this._birth;
+            return this._employee.GetBirth();
         }
 
-        // ---------------------------------------------設置底薪---------------------------------------------
-        public void setBasicSalary(String emplID, float basicSalary)
+        // 設置員工底薪
+        public void SetBasicSalary(float basicSalary)
         {
-            this._basicSalary = basicSalary;
+            this._employee.SetBasicSalary(basicSalary);
         }
 
-        // ---------------------------------------------取得底薪---------------------------------------------
-        public float getBasicSalary(String emplID)
+        // 取得員工底薪
+        public float GetBasicSalary()
         {
-            return this._basicSalary;
+            return this._employee.GetBasicSalary();
         }
 
-        // ---------------------------------------------設置所屬部門編號---------------------------------------------
-        public void setDeptId(String emplID, String deptId)
+        // 設置員工所屬部門ID
+        public void SetDeptID(String deptID)
         {
-            this._deptId = deptId;
+            this._employee.SetDeptId(deptID);
         }
 
-        // ---------------------------------------------取得所屬部門編號---------------------------------------------
-        public String getDeptId(String emplID)
+        // 取得員工所屬部門ID
+        public String GetDeptID()
         {
-            return this._deptId;
+            return this._employee.GetDeptId();
         }
 
-        // ---------------------------------------------設置職位編號---------------------------------------------
-        public void setPositionId(String emplID, String positionId)
+        // 設置員工職位ID
+        public void SetPositoinID(String positionID)
         {
-            this._positionId = positionId;
+            this._employee.SetPositionId(positionID);
         }
 
-        // ---------------------------------------------取得職位編號---------------------------------------------
-        public String getPositionId(String emplID)
+        // 取得員工職位ID
+        public String GetPositionID()
         {
-            return this._positionId;
+            return this._employee.GetPositionId();
         }
 
     }

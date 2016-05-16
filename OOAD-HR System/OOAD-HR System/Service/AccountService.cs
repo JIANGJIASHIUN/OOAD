@@ -12,7 +12,7 @@ namespace OOAD_HR_System.Service
     public class AccountService
     {
 
-        private MySqlConnection myConnection = new MySqlConnection("server=118.166.192.62;user id=hrms; password=hrms; database=hrms; CharSet=utf8");
+        private MySqlConnection myConnection = new MySqlConnection("server=csie-noip.ddns.net;user id=hrms; password=hrms; database=hrms; CharSet=utf8");
         private LoginModel _loginModel = new LoginModel();
 
         public AccountService()
@@ -34,7 +34,7 @@ namespace OOAD_HR_System.Service
         }
 
         // 關閉資料庫連線
-        private void closeConnextion()
+        private void closeConnection()
         {
             myConnection.Close();
         }
@@ -47,25 +47,26 @@ namespace OOAD_HR_System.Service
                 try {
                     DataTable dataSet = new DataTable();
 
-                    MySqlCommand search = new MySqlCommand("SELECT * FROM `account` WHERE `account` = '" + account + "'", myConnection);
-                    search.ExecuteNonQuery();
+                    String searchString = String.Format("SELECT * FROM account WHERE account = '" + account + "'");
+                    MySqlCommand searchCommand = new MySqlCommand(searchString, myConnection);
+                    searchCommand.ExecuteNonQuery();
 
-                    MySqlDataAdapter adapter = new MySqlDataAdapter(search);
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(searchCommand);
                     adapter.Fill(dataSet);
 
                     foreach (DataRow searchDr in dataSet.Rows)
                     {
-                        _loginModel.setAccount(searchDr["account"].ToString());
-                        _loginModel.setPassword(searchDr["password"].ToString());
+                        _loginModel.SetAccount(searchDr["account"].ToString());
+                        _loginModel.SetPassword(searchDr["password"].ToString());
                     }
                 }
                 catch (MySqlException ex)
                 {
-
+                    
                 }
             }
 
-            this.closeConnextion();
+            this.closeConnection();
 
             return this._loginModel;
         }
