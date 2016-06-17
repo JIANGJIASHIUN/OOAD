@@ -1,293 +1,375 @@
-﻿using OOAD_HR_System.Class;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System;
+using System.Text;
 using System.Threading.Tasks;
-using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using OOAD_HR_System.PresentationModel;
+using OOAD_HR_System.Model;
 using OOAD_HR_System.Service;
+using System.Text.RegularExpressions;
+
 
 namespace OOAD_HR_System.Controller
 {
-    class EmployeeController
+    public class EmployeeController
     {
-        EmployeeService _employeeService = new EmployeeService();
 
-        //建構子
-        public EmployeeController()
+        private EmployeeModel _employeeModel = new EmployeeModel();
+        private PositionModel _positionModel = new PositionModel();
+        private EmployeeService _employeeService;
+        private PositionService _positionService;
+
+        // 建構子
+        public EmployeeController(EmployeePresentationModel employeePresentationModel)
         {
-
+            this._employeeModel.SetEmplID(employeePresentationModel.GetEmplID());
+            this._employeeModel.SetName(employeePresentationModel.GetName());
+            this._employeeModel.SetSsn(employeePresentationModel.GetSsn());
+            this._employeeModel.SetSex(employeePresentationModel.GetSex());
+            this._employeeModel.SetPhone(employeePresentationModel.GetPhone());
+            this._employeeModel.SetAddress(employeePresentationModel.GetAddress());
+            this._employeeModel.SetBlood(employeePresentationModel.GetBlood());
+            this._employeeModel.SetBirth(employeePresentationModel.GetBirth());
+            this._employeeModel.SetEmerPerson(employeePresentationModel.GetEmerPerson());
+            this._employeeModel.SetEmerPhone(employeePresentationModel.GetEmerPhone());
+            this._employeeModel.SetMilitaryStatus(employeePresentationModel.GetMilitaryStatus());
+            this._employeeModel.SetJobStatus(employeePresentationModel.GetJobStatus());
+            this._employeeModel.SetMarriedStatus(employeePresentationModel.GetMarriedStatus());
+            this._employeeModel.SetSpouse(employeePresentationModel.GetSpouse());
+            this._employeeModel.SetDeptID(employeePresentationModel.GetDeptID());
+            this._employeeModel.SetPositoinID(employeePresentationModel.GetPositionID());
+            this._employeeModel.SetBasicSalary(employeePresentationModel.GetBasicSalary());
+            this._employeeModel.SetEmplLoginPassword(employeePresentationModel.GetEmplLoginPassword());
         }
 
-        //設定員工編號
-        public bool SetId(string oldId, string newId)
+        // 判斷各個員工資料格式是否錯誤
+        private int JudgeEmplDataFormat()
         {
-            //判斷員工編號是否為空
-            if (string.Equals(newId, string.Empty))
+            int errorFlag = 0;
+
+            if (this._employeeModel.GetEmplID() == "" || this._employeeModel.GetName() == "" || this._employeeModel.GetSsn() == "" || this._employeeModel.GetPhone() == "" ||
+                this._employeeModel.GetAddress() == "" || this._employeeModel.GetEmerPerson() == "" || this._employeeModel.GetEmerPhone() == "" || this._employeeModel.GetEmplLoginPassword() == "" ||
+                (this._employeeModel.GetMarriedStatus() == "已婚" && this._employeeModel.GetSpouse() == ""))
             {
-                return false;
+                MessageBox.Show("尚有欄位為空白, 請重新確認是否填寫完畢!");
+                errorFlag = 1;
             }
             else
             {
-                _employeeService.setId(oldId, newId);
-                return true;
+                if (this.JudgeSsnValid(this._employeeModel.GetSsn()) == false)
+                {
+                    MessageBox.Show("Ssn格式錯誤!");
+                    errorFlag = 1;
+                }
+                if (this.JudgePhoneFormat(this._employeeModel.GetPhone()) == false)
+                {
+                    MessageBox.Show("連絡電話格式錯誤!");
+                    errorFlag = 1;
+                }
+                if (this.JudgePhoneFormat(this._employeeModel.GetEmerPhone()) == false)
+                {
+                    MessageBox.Show("緊急連絡電話格式錯誤!");
+                    errorFlag = 1;
+                }
+                if (this.JudgeBasicSalaryRange(this._employeeModel.GetPositionID(), this._employeeModel.GetBasicSalary()) == false)
+                {
+                    MessageBox.Show("輸入底薪範圍超過該職位底薪之正負5000");
+                    errorFlag = 1;
+                }
             }
+
+            return errorFlag;
         }
 
-        //設定員工姓名
-        public bool SetName(string name)
+        // 呼叫service, 將資料新增至資料庫
+        public void AddEmployee()
         {
-            //判斷員工編號是否為空
-            if (string.Equals(string.Empty, name))
-            {
+            this._employeeService = new EmployeeService(this._employeeModel);
+            AccountService accountService = new AccountService(this._employeeModel.GetEmplID(), this._employeeModel.GetEmplLoginPassword());
+
+            int errorFlag = 0;
+
+            errorFlag = JudgeEmplDataFormat();
+
+            if (errorFlag == 1)
+                return;
+
+            // 新增員工資料與帳號資訊
+            if (_employeeService.AddEmployee() && accountService.AddAccount())
+                MessageBox.Show("新增成功!");
+            else
+                MessageBox.Show("新增失敗!");
+        }
+
+        // 呼叫service, 將資料更新制資料庫(edit)
+        public Boolean EditEmployee()
+        {
+            this._employeeService = new EmployeeService(this._employeeModel);
+
+            int errorFlag = 0;
+
+            errorFlag = JudgeEmplDataFormat();
+
+            if (errorFlag == 1)
                 return false;
-            }
+
+            if (_employeeService.EditEmployee())
+                MessageBox.Show("修改成功!");
             else
             {
-                _employeeService.setName(name);
-                return true;
+                MessageBox.Show("修改失敗!");
+                return false;
             }
+
+            return true;
         }
 
-        //設定員工身分證字號
-        public bool SetSsn(string id, string ssn)
+        // 呼叫position service利用所選取之職位查詢該職位底薪
+        public String SearchBasicSalaryByPositionID()
         {
-            //判斷員工身分證字號是否合乎規格
-            if (CheckSsn(ssn))
+            String positionID = this._employeeModel.GetPositionID();
+            this._positionModel.SetId(positionID);
+
+            this._positionService = new PositionService(this._positionModel);
+
+            this._positionModel = _positionService.SearchBsicSalaryByPositionID();
+
+            return this._positionModel.GetBasicSalary().ToString();
+        }
+
+        // 取得與開頭英文字母相對應之數字
+        private int[] ConvertSsnStartCharToInt(String ssnStartChar)
+        {
+            int[] ssnStartCharInt = new int[2];
+            switch (ssnStartChar)
             {
-                _employeeService.setSsn(id, ssn);
-                return true;
+                case "A" :
+                    ssnStartCharInt[0] = 1;
+                    ssnStartCharInt[1] = 0;
+                    break;
+                case "B" :
+                    ssnStartCharInt[0] = 1;
+                    ssnStartCharInt[1] = 1;
+                    break;
+                case "C" :
+                    ssnStartCharInt[0] = 1;
+                    ssnStartCharInt[1] = 2;
+                    break;
+                case "D" :
+                    ssnStartCharInt[0] = 1;
+                    ssnStartCharInt[1] = 3;
+                    break;
+                case "E" :
+                    ssnStartCharInt[0] = 1;
+                    ssnStartCharInt[1] = 4;
+                    break;
+                case "F" :
+                    ssnStartCharInt[0] = 1;
+                    ssnStartCharInt[1] = 5;
+                    break;
+                case "G" :
+                    ssnStartCharInt[0] = 1;
+                    ssnStartCharInt[1] = 6;
+                    break;
+                case "H" :
+                    ssnStartCharInt[0] = 1;
+                    ssnStartCharInt[1] = 7;
+                    break;
+                case "I" :
+                    ssnStartCharInt[0] = 3;
+                    ssnStartCharInt[1] = 4;
+                    break;
+                case "J" :
+                    ssnStartCharInt[0] = 1;
+                    ssnStartCharInt[1] = 8;
+                    break;
+                case "K" :
+                    ssnStartCharInt[0] = 1;
+                    ssnStartCharInt[1] = 9;
+                    break;
+                case "L" :
+                    ssnStartCharInt[0] = 2;
+                    ssnStartCharInt[1] = 0;
+                    break;
+                case "M" :
+                    ssnStartCharInt[0] = 2;
+                    ssnStartCharInt[1] = 1;
+                    break;
+                case "N" :
+                    ssnStartCharInt[0] = 2;
+                    ssnStartCharInt[1] = 2;
+                    break;
+                case "O" :
+                    ssnStartCharInt[0] = 3;
+                    ssnStartCharInt[1] = 5;
+                    break;
+                case "P" :
+                    ssnStartCharInt[0] = 2;
+                    ssnStartCharInt[1] = 3;
+                    break;
+                case "Q" :
+                    ssnStartCharInt[0] = 2;
+                    ssnStartCharInt[1] = 4;
+                    break;
+                case "R" :
+                    ssnStartCharInt[0] = 2;
+                    ssnStartCharInt[1] = 5;
+                    break;
+                case "S" :
+                    ssnStartCharInt[0] = 2;
+                    ssnStartCharInt[1] = 6;
+                    break;
+                case "T" :
+                    ssnStartCharInt[0] = 2;
+                    ssnStartCharInt[1] = 7;
+                    break;
+                case "U" :
+                    ssnStartCharInt[0] = 2;
+                    ssnStartCharInt[1] = 8;
+                    break;
+                case "V" :
+                    ssnStartCharInt[0] = 2;
+                    ssnStartCharInt[1] = 9;
+                    break;
+                case "W" :
+                    ssnStartCharInt[0] = 3;
+                    ssnStartCharInt[1] = 2;
+                    break;
+                case "X" :
+                    ssnStartCharInt[0] = 3;
+                    ssnStartCharInt[1] = 0;
+                    break;
+                case "Y" :
+                    ssnStartCharInt[0] = 3;
+                    ssnStartCharInt[1] = 1;
+                    break;
+                case "Z" :
+                    ssnStartCharInt[0] = 3;
+                    ssnStartCharInt[1] = 3;
+                    break;
+                default:
+                    break;
             }
+            return ssnStartCharInt;
+        }
+
+        // 判斷身分證是否有效
+        private Boolean JudgeSsnValid(String ssn)
+        {
+
+            if (ssn == null || ssn.Length == 0)
+                return false;
+
+            // 身分證有效判定公式: (n1*1 + n2*9 + n3*8 + n4*7 + n5*6 + n6*5 + n7*4 + n8*3 + n9*2 + n10*1 + n11*1) mod 10 = 0
+            // 設置身分證是否有效判定公式的n1, n2(為開頭英文對應, 後面九碼為後面九個數字
+            int[] ssnInt = new int[11];
+            String startChar = ssn.Substring(0, 1);
+            String secondChar = ssn.Substring(1, 1);
+
+            System.Text.RegularExpressions.Regex reg = new System.Text.RegularExpressions.Regex(@"^[A-Z]+$");
+
+            // 判斷是否為十碼
+            if (ssn.Length == 10) 
+            {
+                // 判斷開頭自母是否為大寫英文字母
+                if (reg.IsMatch(startChar))
+                {
+                    // 判斷第一個數字是否為1 or 2
+                    if (secondChar == "1" || secondChar == "2")
+                    {
+                        int[] startCharInt = new int[2];
+                        // 取得與開頭英文字母相對應之數字
+                        startCharInt = this.ConvertSsnStartCharToInt(startChar);
+                        ssnInt[0] = startCharInt[0];
+                        ssnInt[1] = startCharInt[1];
+
+                        // 將剩餘九位數字轉成int存至陣列
+                        for (int i = 1; i < 10; i++)
+                            ssnInt[i + 1] = System.Convert.ToInt32(ssn.Substring(i, 1));
+
+                        // 利用公式計算是否有效
+                        int ssnSum = 0;
+                        ssnSum += ssnInt[0];
+                        ssnSum += ssnInt[10];
+                        for (int i = 1; i < 10; i++)
+                            ssnSum += ssnInt[i] * (10 - i);
+                        if (ssnSum % 10 == 0)
+                            return true;
+                    }
+                }
+            }
+
             return false;
         }
 
-        //檢查身分證
-        private bool CheckSsn(string ssn)
+        // 判斷電話號碼格式是否正確
+        private Boolean JudgePhoneFormat(String phone)
         {
-            if (!string.IsNullOrEmpty(ssn))
+            if (phone.Length != 10)
+                return false;
+
+            return true;
+        }
+
+        // 判斷底薪範圍 -5000~+5000
+        private Boolean JudgeBasicSalaryRange(String positionID, float basicSalary)
+        {
+            const int RANGE = 5000;
+
+            this._positionModel.SetId(positionID);
+
+            this._positionService = new PositionService(this._positionModel);
+
+            this._positionModel = _positionService.SearchBsicSalaryByPositionID();
+
+            float positionBasicSalary = this._positionModel.GetBasicSalary();
+
+            if (Math.Abs(basicSalary - positionBasicSalary) > RANGE)
+                return false;
+
+            return true;
+        }
+
+        // 呼叫service 利用員工ID查詢員工資料
+        public EmployeePresentationModel SearchDataByEmplID()
+        {
+            EmployeePresentationModel emplPresentationModel = new EmployeePresentationModel();
+
+            if (this._employeeModel.GetEmplID() == null || this._employeeModel.GetEmplID() == "")
+                MessageBox.Show("請輸入員工ID");
+            else
             {
-                ssn = ssn.ToUpper();
-                var regex = new Regex("^[A-Z]{1}[0-9]{9}$");
-                if (regex.IsMatch(ssn))
+                _employeeService = new EmployeeService(this._employeeModel);
+                _employeeModel = _employeeService.searchByEmplID();
+
+                emplPresentationModel.SetEmplID(_employeeModel.GetEmplID());
+                emplPresentationModel.SetName(_employeeModel.GetName());
+                emplPresentationModel.SetSsn(_employeeModel.GetSsn());
+                emplPresentationModel.SetSex(_employeeModel.GetSex());
+                emplPresentationModel.SetPhone(_employeeModel.GetPhone());
+                emplPresentationModel.SetAddress(_employeeModel.GetAddress());
+                emplPresentationModel.SetBlood(_employeeModel.GetBlood());
+                emplPresentationModel.SetBirth(_employeeModel.GetBirth());
+                emplPresentationModel.SetEmerPerson(_employeeModel.GetEmerPerson());
+                emplPresentationModel.SetEmerPhone(_employeeModel.GetEmerPhone());
+                emplPresentationModel.SetMilitaryStatus(_employeeModel.GetMilitaryStatus());
+                emplPresentationModel.SetJobStatus(_employeeModel.GetJobStatus());
+                emplPresentationModel.SetMarriedStatus(_employeeModel.GetMarriedStatus());
+                emplPresentationModel.SetSpouse(_employeeModel.GetSpouse());
+                emplPresentationModel.SetDeptID(_employeeModel.GetDeptID());
+                emplPresentationModel.SetPositoinID(_employeeModel.GetPositionID());
+                emplPresentationModel.SetBasicSalary(_employeeModel.GetBasicSalary());
+
+                if (_employeeModel.GetName() == null || _employeeModel.GetName() == "")
                 {
-                    return true;
+                    MessageBox.Show("此員工ID不存在!");
+                    emplPresentationModel.SetEmplID(null);
                 }
-            }
-            return false; //Regular Expression 驗證失敗，回傳 ID 錯誤
+            }        
+
+            return emplPresentationModel;
         }
 
-        //設定員工性別
-        public bool SetSex(string id, string sex)
-        {
-            //判斷員工性別是否為空
-            if (string.Equals(string.Empty, sex))
-            {
-                return false;
-            }
-            else
-            {
-                _employeeService.setSex(id, sex);
-                return true;
-            }
-        }
-
-        //設定員工血型
-        public bool SetBlood(string id, string blood)
-        {
-            //判斷員工血型是否為空
-            if (string.Equals(string.Empty, blood))
-            {
-                return false;
-            }
-            else
-            {
-                _employeeService.setBlood(id, blood);
-                return true;
-            }
-        }
-
-        //設定員工連絡電話
-        public bool SetPhone(string id, string phone)
-        {
-            //判斷員工連絡電話是否為空
-            if (string.Equals(string.Empty, phone))
-            {
-                return false;
-            }
-            else
-            {
-                _employeeService.setPhone(id, phone);
-                return true;
-            }
-        }
-
-        //設定員工住址
-        public bool SetAddress(string id, string address)
-        {
-            //判斷員工住址是否為空
-            if (string.Equals(string.Empty, address))
-            {
-                return false;
-            }
-            else
-            {
-                _employeeService.setAddress(id, address);
-                return true;
-            }
-        }
-
-        //設定員工緊急聯絡人
-        public bool SetEmerPerson(string id, string person)
-        {
-            //判斷員工緊急聯絡人是否為空
-            if (string.Equals(string.Empty, person))
-            {
-                return false;
-            }
-            else
-            {
-                _employeeService.setEmerPerson(id, person);
-                return true;
-            }
-        }
-
-        //設定員工緊急聯絡人電話
-        public bool SetEmerPhone(string id, string phone)
-        {
-            //判斷員工緊急聯絡人電話是否為空
-            if (string.Equals(string.Empty, phone))
-            {
-                return false;
-            }
-            else
-            {
-                _employeeService.setEmerPhone(id, phone);
-                return true;
-            }
-        }
-
-        //設定員工兵役狀態
-        public bool SetMilitary(string id, string military)
-        {
-            //判斷員工兵役狀態是否為空
-            if (string.Equals(string.Empty, military))
-            {
-                return false;
-            }
-            else
-            {
-                _employeeService.setMilitary(id, military);
-                return true;
-            }
-        }
-
-        //設定員工工作狀態
-        public bool SetJobState(string id, string state)
-        {
-            //判斷員工工作狀態是否為空
-            if (string.Equals(string.Empty, state))
-            {
-                return false;
-            }
-            else
-            {
-                _employeeService.setJobState(id, state);
-                return true;
-            }
-        }
-
-        //設定員工編號
-        public bool SetMarriedState(string id, string marriedState)
-        {
-            //判斷員工編號是否為空
-            if (string.Equals(string.Empty, marriedState))
-            {
-                return false;
-            }
-            else
-            {
-                _employeeService.setMarriedState(id, marriedState);
-                return true;
-            }
-        }
-
-        //設定員工配偶
-        public void SetSpouse(string id, string spouse)
-        {
-            //判斷員工配偶是否為空
-            if (string.Equals(string.Empty, spouse))
-            {
-                //若為空，則輸入"無"
-                _employeeService.setSpouse(id, "無");
-            }
-            else
-            {
-                _employeeService.setSpouse(id, spouse);
-            }
-        }
-
-        //設定員工生日
-        public void SetBirth(string id, DateTime birth)
-        {
-            _employeeService.setBirth(id, birth);
-        }
-
-        //設定員工底薪
-        public bool SetBasicSalary(string id, string basicSalary)
-        {
-            if (string.Equals(string.Empty, basicSalary))
-            {
-                return false;
-            }
-            else
-            {
-                float convertBasicSalary = Convert.ToSingle(basicSalary);
-                //判斷員工底薪是否為空
-                if (convertBasicSalary <10000)
-                {
-                    return false;
-                }
-                else
-                {
-                    _employeeService.setBasicSalary(id, convertBasicSalary);
-                    return true;
-                }
-            }
-        }
-
-        //設定員工部門編號
-        public bool SetDeptId(string id, string deptId)
-        {
-            //判斷員工部門編號是否為空
-            if (string.Equals(string.Empty, deptId))
-            {
-                return false;
-            }
-            else
-            {
-                _employeeService.setDeptId(id, deptId);
-                return true;
-            }
-        }
-
-        //設定員工職位編號
-        public bool SetPositionId(string id, string positionId)
-        {
-            //判斷員工職位編號是否為空
-            if (string.Equals(string.Empty, positionId))
-            {
-                return false;
-            }
-            else
-            {
-                _employeeService.setPositionId(id, positionId);
-                return true;
-            }
-        }
-
-        public void InsertData()
-        {
-            _employeeService.InsertData();
-        }
     }
 }

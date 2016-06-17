@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="salaryDataSet" targetNamespace="http://tempuri.org/salaryDataSet.xsd" xmlns:mstns="http://tempuri.org/salaryDataSet.xsd" xmlns="http://tempuri.org/salaryDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="hrmsConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="hrmsConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.OOAD_HR_System.Properties.Settings.GlobalReference.Default.hrmsConnectionString" Provider="MySql.Data.MySqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="salarypageTableAdapter" GeneratorDataComponentClassName="salarypageTableAdapter" Name="salarypage" UserDataComponentName="salarypageTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="hrmsConnectionString (Settings)" DbObjectName="hrms.salarypage" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Search" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Search" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Search">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT          emplID, accountData, salaryPayWay, salaryTotal, startDate, endDate, salaryPageT
+FROM              salarypage</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="emplID" DataSetColumn="emplID" />
+              <Mapping SourceColumn="accountData" DataSetColumn="accountData" />
+              <Mapping SourceColumn="salaryPayWay" DataSetColumn="salaryPayWay" />
+              <Mapping SourceColumn="salaryTotal" DataSetColumn="salaryTotal" />
+              <Mapping SourceColumn="startDate" DataSetColumn="startDate" />
+              <Mapping SourceColumn="endDate" DataSetColumn="endDate" />
+              <Mapping SourceColumn="salaryPageT" DataSetColumn="salaryPageT" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="hrmsConnectionString (Settings)" DbObjectName="hrms.salarypage" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="SearchAll" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="SearchAll" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="SearchAll">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT          emplID, accountData, salaryPayWay, salaryTotal, startDate, endDate, salaryPageT
+FROM              salarypage</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="salaryDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="salaryDataSet" msprop:Generator_UserDSName="salaryDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="salarypage" msprop:Generator_TableClassName="salarypageDataTable" msprop:Generator_TableVarName="tablesalarypage" msprop:Generator_TablePropName="salarypage" msprop:Generator_RowDeletingName="salarypageRowDeleting" msprop:Generator_RowChangingName="salarypageRowChanging" msprop:Generator_RowEvHandlerName="salarypageRowChangeEventHandler" msprop:Generator_RowDeletedName="salarypageRowDeleted" msprop:Generator_UserTableName="salarypage" msprop:Generator_RowChangedName="salarypageRowChanged" msprop:Generator_RowEvArgName="salarypageRowChangeEvent" msprop:Generator_RowClassName="salarypageRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="emplID" msprop:Generator_ColumnVarNameInTable="columnemplID" msprop:Generator_ColumnPropNameInRow="emplID" msprop:Generator_ColumnPropNameInTable="emplIDColumn" msprop:Generator_UserColumnName="emplID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="accountData" msprop:Generator_ColumnVarNameInTable="columnaccountData" msprop:Generator_ColumnPropNameInRow="accountData" msprop:Generator_ColumnPropNameInTable="accountDataColumn" msprop:Generator_UserColumnName="accountData">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="salaryPayWay" msprop:Generator_ColumnVarNameInTable="columnsalaryPayWay" msprop:Generator_ColumnPropNameInRow="salaryPayWay" msprop:Generator_ColumnPropNameInTable="salaryPayWayColumn" msprop:Generator_UserColumnName="salaryPayWay">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="salaryTotal" msprop:Generator_ColumnVarNameInTable="columnsalaryTotal" msprop:Generator_ColumnPropNameInRow="salaryTotal" msprop:Generator_ColumnPropNameInTable="salaryTotalColumn" msprop:Generator_UserColumnName="salaryTotal">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="startDate" msprop:Generator_ColumnVarNameInTable="columnstartDate" msprop:Generator_ColumnPropNameInRow="startDate" msprop:Generator_ColumnPropNameInTable="startDateColumn" msprop:Generator_UserColumnName="startDate">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="endDate" msprop:Generator_ColumnVarNameInTable="columnendDate" msprop:Generator_ColumnPropNameInRow="endDate" msprop:Generator_ColumnPropNameInTable="endDateColumn" msprop:Generator_UserColumnName="endDate">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="salaryPageT" msprop:Generator_ColumnVarNameInTable="columnsalaryPageT" msprop:Generator_ColumnPropNameInRow="salaryPageT" msprop:Generator_ColumnPropNameInTable="salaryPageTColumn" msprop:Generator_UserColumnName="salaryPageT">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
